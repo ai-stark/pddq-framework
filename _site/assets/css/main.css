@@ -1,0 +1,272 @@
+.content {
+  margin: 0 auto;
+  max-width: 650px; }
+
+.is-center {
+  text-align: center; }
+
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: "Lato", sans-serif;
+  color: #252525;
+  font-size: 14px;
+  letter-spacing: 1px; }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Lato';
+  font-weight: normal;
+  font-style: normal; }
+.btn-landing {
+  background-color: #084c80;
+  background-position: 95%;
+  background-repeat: no-repeat;
+  border-radius: .5em;
+  display: block;
+  margin: .4em 0;
+  padding: 1em 5.5em 1em 2em;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  background-size: 3em;
+  transition: all .3s; }
+
+.btn-intro {
+  background-image: url("../images/intro.png"); }
+
+.btn-governance {
+  background-image: url("../images/data-governance.png"); }
+
+.btn-data-quality {
+  background-image: url("../images/data-quality.png"); }
+
+.btn-data-operations {
+  background-image: url("../images/data-operations.png"); }
+
+.btn-platform-and-standards {
+  background-image: url("../images/platform-and-standards.png"); }
+
+.btn-supporting-processes {
+  background-image: url("../images/supporting-processes.png"); }
+
+.btn-landing:hover {
+  background-color: #b7d4fa;
+  background-image: url("../images/arrow.png");
+  background-position: 97%;
+  background-repeat: no-repeat;
+  background-size: 3.5em;
+  color: #000;
+  text-decoration: none;
+  transition: all .3s; }
+
+.section-title {
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  font-size: 1.714em; }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  padding: .5em;
+  margin: .5em;
+  display: block; }
+
+.skip:focus {
+  left: 9999px;
+  position: static; }
+
+.landing-page-wrap {
+  background-image: url("../images/background-home.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 1em;
+  height: 100vh;
+  box-sizing: border-box; }
+
+.site-title {
+  color: #056db1;
+  text-transform: uppercase;
+  font-family: "Lato Bold", sans-serif;
+  font-weight: 700;
+  font-size: 2.143em;
+  margin-top: .4em;
+  margin-bottom: 1.5em; }
+
+.trigger-wrap {
+  position: relative; }
+
+.worksheet-trigger {
+  position: absolute;
+  background-color: #555555;
+  font-family: "Lato Bold", sans-serif;
+  font-weight: 700;
+  font-size: 1.143em;
+  right: 0;
+  bottom: 0; }
+
+.btn-evaluate {
+  background-image: url("../images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: 95%;
+  padding: 1.5em 4.5em 1.5em 1.2em;
+  display: block;
+  text-decoration: none;
+  color: #fff; }
+
+.nav-question p {
+  font-size: 1.786em;
+  color: #252525;
+  margin-top: .75em;
+  margin-bottom: 0px; }
+
+.page-wrapper {
+  background-color: #ddd; }
+
+.id-wrap {
+  padding-left: 1.5em;
+  position: relative;
+  height: 70px; }
+  .id-wrap .onc-logo {
+    width: 17em;
+    margin-bottom: .2em; }
+  .id-wrap .site-title {
+    font-size: 1.286em;
+    display: inline-block;
+    margin-bottom: .3em;
+    position: absolute;
+    right: 2.2em;
+    bottom: 0; }
+
+.nav-tab-wrap {
+  position: relative;
+  display: inline-block;
+  text-align: center; }
+
+.nav-band {
+  background-color: #07538f;
+  height: 90px; }
+
+.nav-band .tab {
+  display: inline-block;
+  margin-left: 3em; }
+
+.nav-band .tab:first-child {
+  margin-left: 0em; }
+
+.btn-page-nav {
+  background-repeat: no-repeat;
+  background-size: 2em;
+  background-position: center 45%;
+  text-decoration: none;
+  padding: 4em 0em .5em 0em;
+  display: block;
+  color: #fff;
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  font-size: 1.143em; }
+
+.active-pointer {
+  position: absolute;
+  display: inline-block;
+  margin-left: -15px;
+  width: 0;
+  height: 0;
+  border: 15px solid #ddd;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid transparent; }
+
+.left-content {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 40px 20px 20px 20px; }
+  .left-content h2 {
+    font-family: "Source Sans Pro Bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.714em;
+    color: #07538f;
+    margin-top: 0px; }
+  .left-content ul {
+    padding-left: 0px; }
+  .left-content li {
+    font-family: "Source Sans Pro Bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.143em;
+    list-style-type: none;
+    padding: 5px 5px 5px 25px; }
+    .left-content li a {
+      text-decoration: none;
+      color: #959595; }
+    .left-content li.selected {
+      background-image: url("../images/caret-right.png");
+      background-repeat: no-repeat; }
+    .left-content li.selected a {
+      color: #252525; }
+
+.center-content {
+  padding: 40px 20px 20px 0px;
+  background-color: #fff;
+  box-sizing: border-box;
+  min-height: 1000px; }
+  .center-content h3.subheading {
+    font-size: 1.143em; }
+  .center-content .page-definition {
+    font-family: "Source Sans Pro Bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.143em;
+    color: #959595;
+    margin-top: 0px; }
+
+.right-content {
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 20px 20px 20px; }
+  .right-content h3.subheading {
+    font-size: 1.143em; }
+  .right-content h3.subheading:first-child {
+    margin-top: 0px; }
+  .right-content .trigger-wrap {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0; }
+  .right-content .worksheet-trigger {
+    position: static;
+    background-color: #555555;
+    font-family: "Lato Bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.143em; }
+  .right-content .btn-evaluate {
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    padding: 1.7em 4.5em 1.7em 1.2em;
+    display: block;
+    text-decoration: none;
+    color: #fff; }
+  .right-content p:after {
+    display: inline-block;
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    background: url("../images/info_icon.png") no-repeat;
+    background-position: 95%; }
+
+/* Test */
+/* @keyframes fadeIn{
+	from{ opacity:0; }
+	to{ opacity: 1; }
+}
+
+
+.fade-in{
+	opacity: 0;
+	animation: fadeIn ease-in 1;
+	animation-fill-mode: forwards;
+	animation-duration: .2s;
+} */

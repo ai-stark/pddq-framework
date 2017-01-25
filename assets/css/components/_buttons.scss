@@ -1,0 +1,49 @@
+.btn-landing{
+	background-color: #084c80;
+	background-position: 95%;
+	background-repeat: no-repeat;
+	border-radius: .5em;
+	display: block;
+	margin: .4em 0;
+	padding: 1em 5.5em 1em 2em;
+	position: relative;
+	text-decoration: none;
+	color: white;
+	background-size: 3em;
+	transition: all .3s;
+}
+
+.btn-intro{
+	background-image: url('../images/intro.png');
+}
+
+.btn-governance{
+	background-image: url('../images/data-governance.png');
+}
+
+.btn-data-quality{
+	background-image: url('../images/data-quality.png');
+}
+
+.btn-data-operations{
+	background-image: url('../images/data-operations.png');
+}
+
+.btn-platform-and-standards{
+	background-image: url('../images/platform-and-standards.png');
+}
+
+.btn-supporting-processes{
+	background-image: url('../images/supporting-processes.png');
+}
+
+.btn-landing:hover{
+	background-color: $blue-light;
+	background-image: url('../images/arrow.png');
+	background-position: 97%;
+	background-repeat: no-repeat;
+	background-size: 3.5em;
+	color: #000;
+	text-decoration: none;
+	transition: all .3s;
+}

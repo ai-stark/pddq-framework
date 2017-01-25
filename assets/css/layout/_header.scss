@@ -1,0 +1,12 @@
+.skip {
+    position: absolute;
+    left: -9999px;
+    padding: .5em;
+    margin: .5em;
+    display: block;
+}
+
+.skip:focus {
+    left: 9999px;
+    position: static;
+}

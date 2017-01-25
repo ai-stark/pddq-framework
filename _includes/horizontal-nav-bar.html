@@ -1,0 +1,81 @@
+{% assign url_parts2 = page.url | split: "/" %}
+
+<div class="nav-band"> 
+
+	<div class="pure-g">
+
+		<div class="pure-u-5-24">&nbsp;</div>
+
+		<div class="pure-u-19-24">
+			
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'introduction' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-intro fade-in" href="{{site.baseurl}}/introduction">
+						<span>Introduction</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'data-governance' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-governance fade-in" href="{{site.baseurl}}/data-governance">
+						<span>Data Governance</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'data-quality' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-data-quality fade-in" href="{{site.baseurl}}/data-quality">
+						<span>Data Quality</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'data-operations' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-data-operations fade-in" href="{{site.baseurl}}/data-operations">
+						<span>Data Operations</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'platform-and-standards' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-platform-and-standards fade-in" href="{{site.baseurl}}/platform-and-standards">
+						<span>Platform & Standards</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="nav-tab-wrap">
+					{% if url_parts2[1] == 'supporting-processes' %}
+					<div class="active-pointer"></div>
+					{% endif %}
+					<a class="btn-page-nav btn-supporting-processes fade-in" href="{{site.baseurl}}/supporting-processes">
+						<span>Supporting Processes</span>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div> <!-- end nav band -->
