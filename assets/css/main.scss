@@ -4,9 +4,9 @@
 @charset "utf-8";
 
 // Imports from helpers
-@import 'helpers/functions';
-@import 'helpers/helpers';
-@import 'helpers/mixins';
+//@import 'helpers/functions';
+//@import 'helpers/helpers';
+//@import 'helpers/mixins';
 @import 'helpers/variables';
 
 // Imports from base
@@ -18,13 +18,13 @@
 @import 'components/navigation';
 
 // Imports from layout
-@import 'layout/footer';
-@import 'layout/forms';
-@import 'layout/grid';
+//@import 'layout/footer';
+//@import 'layout/forms';
+//@import 'layout/grid';
 @import 'layout/header';
-@import 'layout/sidebar';
+//@import 'layout/sidebar';
 
 // Imports from pages
-@import 'pages/contact';
+//@import 'pages/contact';
 @import 'pages/home';
 @import 'pages/page';
