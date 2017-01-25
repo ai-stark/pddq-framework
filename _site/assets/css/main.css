@@ -35,7 +35,7 @@ html, button, input, select, textarea,
   transition: all .3s; }
 
 .btn-intro {
-  background-image: url("../images/intro.png"); }
+  background-image: url("../images/introduction.png"); }
 
 .btn-governance {
   background-image: url("../images/data-governance.png"); }
