@@ -1,0 +1,25 @@
+{
+	"introduction": {
+		"parent": "Introduction",
+		"children": [{"name":"Background"},
+					 {"name":"About the PDDQ Framework"},
+					 {"name":"Audience"},
+					 {"name":"PDDQ Framework"},
+					 {"name":"Framework Organization"}]
+	},
+	"data-governance": {
+		"parent": "Data Governance",
+		"children": [{"name":"Governance Management"},
+					 {"name":"Data Management Function"},
+					 {"name":"Communication"},
+					 {"name":"Business Glossary, Metadata, and Data Standards"}]
+	},
+	"data-quality": {
+		"parent": "Data Quality",
+		"children": [{"name":"Data Quality Planning"},
+					 {"name":"Data Profiling"},
+					 {"name":"Data Quality Assessment"},
+					 {"name":"Data Cleansing and Improvement"}]
+	}
+
+}

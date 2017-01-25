@@ -1,0 +1,23 @@
+<div class="pure-u-5-24 left-content">
+
+{% assign groups = site.pages %}
+
+{% for p in groups %}
+
+
+<h2>{{site.data.worksheet-menu[p.slug].parent}}</h2>
+
+<ul>
+{% for z in site.data.worksheet-menu[p.slug].children %}
+
+	<li>{{ z.name }}</li>
+
+{% endfor %}
+</ul>
+
+	
+{% endfor %}
+
+
+
+</div>
