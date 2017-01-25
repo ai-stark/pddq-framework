@@ -17,9 +17,10 @@
 </head>
 <body>
 	<a href="#top-of-page" class="skip">Skip to content</a>
+		<div class="worksheet-wrapper" style="position: relative;">
 
 		
-	<div class="page-wrapper">
+			<div class="page-wrapper">
 
 	<div class="id-wrap">
 	<img class="onc-logo" src="/pddq/assets/images/onc_logo.png" alt="ONC Logo">
@@ -318,13 +319,20 @@
 
 
 <div class="pure-u-5-24 right-content">
+
+	
 	<div class="trigger-wrap">
-		<div class="worksheet-trigger">
-			<a href="" class="btn-evaluate">
-				<span>Evaluate your Organization</span>
-			</a>
-		</div>
+	<div class="worksheet-trigger">
+		<a href="" class="btn-evaluate" >
+			<span>Evaluate your Organization</span>
+		</a>
+
+
 	</div>
+	<span onclick="openNav()">open</span>
+</div>
+
+
 </div>
 
 		
@@ -334,8 +342,20 @@
 
 	
 
+			<div id="myNav" class="worksheet-overlay">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+	<div class="overlay-content">
+	    <a href="#">About</a>
+	    <a href="#">Services</a>
+	    <a href="#">Clients</a>
+	    <a href="#">Contact</a>
+  	</div>
+
+</div>
+		</div>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<script src="/pddq/assets/js/main.js"></script>
 </body>
 </html>
