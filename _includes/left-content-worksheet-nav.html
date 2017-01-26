@@ -1,23 +1,26 @@
-<div class="pure-u-5-24 left-content">
+<div class="pure-u-6-24 left-content">
+
+<h2>Evaluate Your Organization</h2>
 
 {% assign groups = site.pages %}
 
+
 {% for p in groups %}
 
-
-<h2>{{site.data.worksheet-menu[p.slug].parent}}</h2>
-
-<ul>
-{% for z in site.data.worksheet-menu[p.slug].children %}
-
-	<li>{{ z.name }}</li>
-
-{% endfor %}
-</ul>
-
+	{% if p.slug %}
 	
+		<h2>{{site.data.worksheet-menu[p.slug].parent}}</h2>
+
+		<ul>
+		{% for z in site.data.worksheet-menu[p.slug].children %}
+
+			<li class="worksheet-nav"><a href="#{{p.slug}}-group-{{forloop.index}}">{{ z.name }}</a></li>
+
+		{% endfor %}
+		</ul>
+
+	{% endif %}
+
 {% endfor %}
-
-
 
 </div>

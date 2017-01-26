@@ -1,7 +1,11 @@
 {
 	"introduction": {
 		"parent": "Introduction",
-		"children": [{"name":"Background"},
+		"children": [{"name":"Background", 
+					  "evaluation": [{"question":"1.1 Is a data governance structure defined and established with roles, responsibilities, and accountability assigned to all supplying and consuming business units involved in activities and decisions about patient demographic data?"},
+					  				 {"question":"2.1 Does data governance follow defined policies and processes?"},
+					  				 {"question":"3.1 Does data governance define and approve appropriate metrics to evaluate the effectiveness of quality improvements to patient demographic data?"},
+					  				 {"question":"3.2 Is training in data governance processes available and required for participating stakeholders?"}]},
 					 {"name":"About the PDDQ Framework"},
 					 {"name":"Audience"},
 					 {"name":"PDDQ Framework"},
@@ -20,6 +24,26 @@
 					 {"name":"Data Profiling"},
 					 {"name":"Data Quality Assessment"},
 					 {"name":"Data Cleansing and Improvement"}]
+	},
+	"data-operations": {
+		"parent": "Data Operations",
+		"children": [{"name":"Data Requirements Definition"},
+					 {"name":"Data Lifecycle Management"},
+					 {"name":"Data Provider Management"}]
+	},
+	"platform-and-standards": {
+		"parent": "Platform and Standards",
+		"children": [{"name":"Data Standards"},
+					 {"name":"Data Management Platform"},
+					 {"name":"Data Integration"},
+					 {"name":"Historical Data, Archiving, and Retention"}]
+	},
+	"supporting-processes": {
+		"parent": "Supporting Processes",
+		"children": [{"name":"Measurement and Analysis"},
+					 {"name":"Process Management"},
+					 {"name":"Process Quality Assurance"}]
 	}
+
 
 }
