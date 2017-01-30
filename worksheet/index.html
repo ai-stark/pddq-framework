@@ -7,12 +7,99 @@ group: Worksheet
 
 {% include left-content-worksheet-nav.html %}
 
+{% assign pagesWorksheet = site.html_pages | sort: "group" %}
+
+<div class="pure-u-18-24 center-content">
+	<form action="" class="pure-form pure-form-stacked">
+		<fieldset>
+
+			{% for p in pagesWorksheet %}
+
+				{% if p.slug %}
+				{% unless p.slug == "introduction" %}
+				
+					{% for item in site.data.worksheet-menu[p.slug].children %}
+
+					<legend id="{{item.name | slugify}}-group">{{ item.name }}</legend>
+
+					<div class="pure-g">
+					
+
+						<div class="pure-u-9-24">
+							<p>Question</p>
+						</div>
+						<div class="pure-u-3-24">
+							<p>Attainment</p>
+						</div>
+						<div class="pure-u-6-24">
+							<p>Evidence of Attainment</p>
+						</div>
+						<div class="pure-u-6-24">
+							<p>Notes</p>
+						</div>
+
+						{% for thing in item.evaluation %}
+
+							<div class="pure-u-9-24">
+								<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block">{{thing.question}}</span>
+							</div>
+							<div class="pure-u-3-24">
+								<label class="element-invisible" for="background-1-1-attainment">Attainment</label>
+								<select name="background-1-1-attainment" id="background-1-1-attainment">
+									<option value="full">Full</option>
+									<option value="partial">Partial</option>
+									<option value="none">None</option>
+								</select>
+							</div>
+							<div class="pure-u-6-24">
+								<label class="element-invisible" for="evidence">Evidence</label>
+								<textarea class="pure-u-23-24" name="evidence" id="evidence"  rows="5"></textarea>
+							</div>
+							<div class="pure-u-6-24">
+								<label class="element-invisible" for="notes">Notes</label>
+								<textarea class="pure-u-23-24" name="notes" id="notes"  rows="5"></textarea>
+							</div>
+
+
+							<div class="pure-u-1" style="height: 1px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
+
+
+
+						{% endfor %} <!-- end for -->
+
+
+					</div> <!-- end pure-g -->
+
+					{% endfor %} <!-- end for -->
+
+					<br><br><br><br><br>
+				{% endunless %}
+				{% endif %} 
+
+			{% endfor %}
+
+		</fieldset>
+	</form>
+
+	<div style="width: 100%; height: 1000px"></div>
+
+</div> <!-- end center content -->
+
+
+
+
+
+
+
+
+<!-- 
 
 <div class="pure-u-18-24 center-content">
 	<form action="" class="pure-form pure-form-stacked">
 		<fieldset>
 			<legend id="introduction-group-1">Background</legend>
 			<div class="pure-g">
+			
 
 				<div class="pure-u-9-24">
 					<p>Question</p>
@@ -53,10 +140,10 @@ group: Worksheet
 				
 
 
+ -->
 
 
-
-
+<!-- 
 
 				<div class="pure-u-9-24">
 					<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block">2.1 Does data governance follow defined policies and processes?</span>
@@ -137,30 +224,22 @@ group: Worksheet
 
 
 				<a id="button" class="pure-button pure-u-1-5" href="#">A Pure Button</a>
+ -->
 
-
-
+<!--
 
 			</div>
 			
 		</fieldset>
 	</form>
-
+-->
 
 	
 
-</div> <!-- end center content -->
 
 
 
 
 
-<div class="row">
-	<div class="column"></div>
-	<div class="column"></div>
-	<div class="column"></div>
-	<div class="column"></div>
-	<div class="column"></div>
-</div>
 
 

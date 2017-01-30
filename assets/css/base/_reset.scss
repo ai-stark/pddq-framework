@@ -27,3 +27,10 @@ html, button, input, select, textarea,
   height: 1px;
   overflow:hidden;
 }
+ 
+
+#sticky-menu.sticky{
+	position: fixed;	
+	top: 0px;
+}  
+
