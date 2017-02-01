@@ -11,6 +11,15 @@ group: Worksheet
 
 <div class="pure-u-18-24 center-content">
 	<form action="" class="pure-form pure-form-stacked">
+
+
+		<div class="pure-g">
+			<a id="clear" class="pure-button pure-u-1-5" href="#">CLEAR</a>
+			<div class="pure-u-1-5"></div>
+			<a id="save" class="pure-button pure-u-1-5" href="#">SAVE</a>
+		</div>
+
+
 		<fieldset>
 
 			{% for p in pagesWorksheet %}
@@ -19,11 +28,11 @@ group: Worksheet
 				{% unless p.slug == "introduction" %}
 				
 					{% for item in site.data.worksheet-menu[p.slug].children %}
+				
 
 					<legend id="{{item.name | slugify}}-group">{{ item.name }}</legend>
 
 					<div class="pure-g">
-					
 
 						<div class="pure-u-9-24">
 							<p>Question</p>
@@ -43,21 +52,24 @@ group: Worksheet
 							<div class="pure-u-9-24">
 								<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block">{{thing.question}}</span>
 							</div>
+
 							<div class="pure-u-3-24">
-								<label class="element-invisible" for="background-1-1-attainment">Attainment</label>
-								<select name="background-1-1-attainment" id="background-1-1-attainment">
+								<label class="element-invisible" for="{{ item.name | slugify }}-attainment-{{ forloop.index }}">Attainment</label>
+								<select class="attainment-fields" name="{{ item.name | slugify }}-attainment-{{ forloop.index }}" id="{{ item.name | slugify }}-attainment-{{ forloop.index }}">
 									<option value="full">Full</option>
 									<option value="partial">Partial</option>
-									<option value="none">None</option>
+									<option value="none" selected="selected">None</option>
 								</select>
 							</div>
+
 							<div class="pure-u-6-24">
-								<label class="element-invisible" for="evidence">Evidence</label>
-								<textarea class="pure-u-23-24" name="evidence" id="evidence"  rows="5"></textarea>
+								<label class="element-invisible" for="{{ item.name | slugify }}-evidence-{{ forloop.index }}">Evidence</label>
+								<textarea class="pure-u-23-24 evidence-fields" name="{{ item.name | slugify }}-evidence-{{ forloop.index }}" id="{{ item.name | slugify }}-evidence-{{ forloop.index }}" rows="5" placeholder="This is where you enter evidence of attainment"></textarea>
 							</div>
+
 							<div class="pure-u-6-24">
-								<label class="element-invisible" for="notes">Notes</label>
-								<textarea class="pure-u-23-24" name="notes" id="notes"  rows="5"></textarea>
+								<label class="element-invisible" for="{{ item.name | slugify }}-notes-{{ forloop.index }}">Notes</label>
+								<textarea class="pure-u-23-24 notes-fields" name="{{ item.name | slugify }}-notes-{{ forloop.index }}" id="{{ item.name | slugify }}-notes-{{ forloop.index }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
 							</div>
 
 
@@ -223,7 +235,7 @@ group: Worksheet
 				<div class="pure-u-1" style="height: 5px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
 
 
-				<a id="button" class="pure-button pure-u-1-5" href="#">A Pure Button</a>
+				
  -->
 
 <!--
