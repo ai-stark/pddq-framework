@@ -12,6 +12,50 @@ left-content-nav-order: 1
 	
 	<h3 id="" class="subheading">Data Requirements Definition</h3>
 
+	<h4>Purpose</h4>
+
+	<p>Ensures that data produced and consumed satisfies business objectives, is understood by all relevant stakeholders, and meets the needs of the business processes that create and use the data. Introductory Notes</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>While most organizations have a comprehensive approach to defining requirements for information system functionality, the corresponding data requirements are often neglected by comparison.  Typically, attention is focused on system behavior; for example, “The system shall display a patient’s name history”, “The system shall require that the Social Security Number is entered twice”, or “The system shall display the message ‘check for existing patient’ if the user enters the same name, birth date, and gender as an existing patient record.”</p>
+
+	<p>It is not uncommon for an IT project team to quickly design a database during software development, without reference to business terms, data standards (names, metadata, allowed values, ranges, lengths, etc.), or quality rules. Organizations are much better served by ensuring that selection of and specifications for data used to satisfy business objectives, are prioritized, validated by stakeholders, and well documented through a repeatable process.</p>
+
+	<p>Data requirements definition establishes the process used to identify, prioritize, precisely formulate, and validate the data needed to achieve business objectives. When documenting data requirements, data should be referenced in business language, reusing approved standard business terms if available. If business terms have not yet been standardized and approved for the data within scope, the data requirements process provides the occasion to develop them. For patient demographic data, governance should be engaged in validating data requirements, with representation from supplying and consuming business areas across the lifecycle to ensure that their requirements are met.</p>
+
+	<p>Data requirements definition should follow an organized and sequential discovery and decomposition process. Business rules for system behavior should be developed in parallel with the logical design of the destination data store; this method is bi-directional and iterative.  Data requirements should be represented in the logical design of the data store and should reflect standardization across projects.</p> 
+
+	<p>If data in the new data store already exists elsewhere and will migrate, profiling should be performed to ensure that it meets the business expectations and requirements prior to population (See Data Profiling). This may positively impact the design process by surfacing the need for additional quality rules or specifications, and it will improve the percentage of requirements satisfied and reduce the amount of rework for future releases.</p>
+
+	<p>It is advised to develop a standard template for data requirements specification, for new systems, data stores consolidations, data repositories (e.g., Master Patient Index, enterprise data warehouse), and developing data exchange mechanisms.  The data requirements definition process contributes to the creation and validation of business terms and definitions, which link to metadata, data standards, and the business processes which manage and process the data. The template can be as simple as a spreadsheet capturing, for example, the following information:</p>
+
+	<ul>
+		<li><strong>Business term</strong> – the data element name in business English, e.g., Street Address;</li>
+		<li><strong>Term definition</strong> – the approved definition of the business term, e.g. Birth Date – the date on which a person was born;</li> 
+		<li><strong>Originating business process</strong> – the process that creates the data, e.g., Patient Registration;</li>
+		<li><strong>Consuming business process(es)</strong> – the process or processes that use the data, e.g., Clinical Care, Laboratory, Claims;</li>
+		<li><strong>Modifying business process(es)</strong> – the process or processes through which the data can be modified, e.g., Billing;</li>
+		<li><strong>Owner</strong> – the name of the individual who has the responsibility for ensuring that the business term is correct and approved; and/or the ability to grant or deny permission for access; and/or the individual who manages the business process that creates the data element – however the responsibility is assigned;</li>
+		<li><strong>Steward</strong> – the name of the individual who represents the data element in governance activities, on behalf of the entire organization;</li>
+		<li><strong>Logical name</strong> – the business term transformed to the organization’s data design standards, e.g., Street Address 1 Text, Street Address 2 Text;</li>
+		<li><strong>Allowed values</strong> – the codes, minimum/maximum ranges, etc. which are acceptable, e.g., M, F, U;</li>
+		<li><strong>Values format</strong> – how the values are represented, e.g., MMDDYYYY, 60x (text characters), 999-99-9999 (SSN), 2x (state code), 9-999-999-9999 (phone number), etc.;</li>
+		<li><strong>Originating data source(s)</strong> (if acquired) – e.g., Registration Capture System;</li>
+		<li><strong>Source table name</strong> – the name of the table within the source, if applicable, e.g., PT_PRFLE (patient profile);</li>
+		<li><strong>Source column name</strong> – the name of the column containing the data in the data source, e.g., PT_FRST_NM;</li>
+		<li><strong>Physical name</strong> – the name of the term developed for the physical database in which it is or will be stored, applying physical data standards, e.g. ST_ADDR_1_TX; and</li>
+		<li><strong>Quality rule(s)</strong> – the automated test or tests that will be applied to the data element upon entry, e.g., First Name must contain more than one character, First Name must contain a single word (no extra components such as suffixes).</li>
+	</ul>
+ 
+	<p>It can be observed from the sample list above, which may vary according to the organization, that the data requirements definition process is dependent on, or may become the occasion for, executing many of the data management processes described in this document, supported by corresponding work products:  Business Glossary, Metadata Management, Data Governance, Data Lifecycle Management, Data Quality Assessment, Data Cleansing and Improvement, and Provider Management.  This is a practical illustration of the synergy of best practices.</p>
+
+	<p>The organization should apply the requirements definition process and standard template when considering adding new patient demographic data elements, such as mother’s maiden name, previous address, previous phone number, etc.  The effects on existing business processes, matching algorithms, confidence in patient identity, and projected development and maintenance costs should be analyzed and reviewed and approved through governance.</p> 
+
+	<p>Adopting data requirements from regulatory and industry sources is highly advised an organization seeking to improve the quality of its patient demographic data. For example, there are a number of healthcare industry efforts underway to advocate adoption of standardized data attributes to improve patient identity integrity.  The recommended data sets proposed to improve matching vary; a number of relevant standards are referenced in the “Patient Identification and Matching Final Report,” published by Audacious Inquiry in 2014 for ONC.</p>
+
+	<p>Establishing and following sound practices for defining data requirements is critical to minimizing data complexity over time.  Effectively implementing this process will yield the following benefits:  Ensures that knowledgeable individuals determine what data is needed;  Increases the ability to share data across the organization and among organizations;  Ensures proactive data quality measures are built into systems and data stores;  Strengthens the relationship between data and business processes;  Establishes data ownership, stewardship, and lineage; and  Enhances the business glossary and builds metadata assets. </p>
+
 </div> <!-- end center content -->
 
 

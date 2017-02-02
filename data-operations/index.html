@@ -10,12 +10,149 @@ left-content-nav-order: 0
 
 
 <div class="pure-u-14-24 center-content">
+	<p class="page-definition">Best practices for specifying data requirements, managing implemented data across the entire data lifecycle, and ensuring timely and accurate data from data providers.</p> 
+
+	<p>The Data Operations category contains process areas designed to help an organization:</p>
+	<ul>
+		<li>Define and specify data requirements;</li>
+		<li>Map and trace data through the business processes that produce or consume it;</li>
+		<li>Ensure that data changes are tracked and managed;</li>
+		<li>Select data sources according to requirements and verify authoritative sources; and</li>
+		<li>Include quality requirements for vendor agreements.</li>
+	</ul>
+
+	<p>Data Requirements Definition addresses practices that ensure specifications for data: satisfy business objectives, are validated by stakeholders, are prioritized, and are documented through a repeatable process. Data Lifecycle Management assists an organization to ensure that data creation, movement, and updates are mapped to business processes and data stores across all lifecycle phases. Data Provider Management contains best practices for selection of data sources, contractual and service level agreement controls, and systematic interactions with internal and external providers to improve service and quality.</p>
+
+	<p>The practices in this category will: increase staff’s knowledge about the data assets; allow business process performers to identify the best data sources to meet their needs; enable both data suppliers and consumers to map data dependencies; allow stakeholders to determine the impact of changes; support organized data integration; and design or acquire more accurate and efficient systems and data stores.</p>
+
 	<h3 id="" class="subheading">Data Requirements Definition</h3>
-	
+
+	<h4>Purpose</h4>
+
+	<p>Ensures that data produced and consumed satisfies business objectives, is understood by all relevant stakeholders, and meets the needs of the business processes that create and use the data. Introductory Notes</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>While most organizations have a comprehensive approach to defining requirements for information system functionality, the corresponding data requirements are often neglected by comparison.  Typically, attention is focused on system behavior; for example, “The system shall display a patient’s name history”, “The system shall require that the Social Security Number is entered twice”, or “The system shall display the message ‘check for existing patient’ if the user enters the same name, birth date, and gender as an existing patient record.”</p>
+
+	<p>It is not uncommon for an IT project team to quickly design a database during software development, without reference to business terms, data standards (names, metadata, allowed values, ranges, lengths, etc.), or quality rules. Organizations are much better served by ensuring that selection of and specifications for data used to satisfy business objectives, are prioritized, validated by stakeholders, and well documented through a repeatable process.</p>
+
+	<p>Data requirements definition establishes the process used to identify, prioritize, precisely formulate, and validate the data needed to achieve business objectives. When documenting data requirements, data should be referenced in business language, reusing approved standard business terms if available. If business terms have not yet been standardized and approved for the data within scope, the data requirements process provides the occasion to develop them. For patient demographic data, governance should be engaged in validating data requirements, with representation from supplying and consuming business areas across the lifecycle to ensure that their requirements are met.</p>
+
+	<p>Data requirements definition should follow an organized and sequential discovery and decomposition process. Business rules for system behavior should be developed in parallel with the logical design of the destination data store; this method is bi-directional and iterative.  Data requirements should be represented in the logical design of the data store and should reflect standardization across projects.</p> 
+
+	<p>If data in the new data store already exists elsewhere and will migrate, profiling should be performed to ensure that it meets the business expectations and requirements prior to population (See Data Profiling). This may positively impact the design process by surfacing the need for additional quality rules or specifications, and it will improve the percentage of requirements satisfied and reduce the amount of rework for future releases.</p>
+
+	<p>It is advised to develop a standard template for data requirements specification, for new systems, data stores consolidations, data repositories (e.g., Master Patient Index, enterprise data warehouse), and developing data exchange mechanisms.  The data requirements definition process contributes to the creation and validation of business terms and definitions, which link to metadata, data standards, and the business processes which manage and process the data. The template can be as simple as a spreadsheet capturing, for example, the following information:</p>
+
+	<ul>
+		<li><strong>Business term</strong> – the data element name in business English, e.g., Street Address;</li>
+		<li><strong>Term definition</strong> – the approved definition of the business term, e.g. Birth Date – the date on which a person was born;</li> 
+		<li><strong>Originating business process</strong> – the process that creates the data, e.g., Patient Registration;</li>
+		<li><strong>Consuming business process(es)</strong> – the process or processes that use the data, e.g., Clinical Care, Laboratory, Claims;</li>
+		<li><strong>Modifying business process(es)</strong> – the process or processes through which the data can be modified, e.g., Billing;</li>
+		<li><strong>Owner</strong> – the name of the individual who has the responsibility for ensuring that the business term is correct and approved; and/or the ability to grant or deny permission for access; and/or the individual who manages the business process that creates the data element – however the responsibility is assigned;</li>
+		<li><strong>Steward</strong> – the name of the individual who represents the data element in governance activities, on behalf of the entire organization;</li>
+		<li><strong>Logical name</strong> – the business term transformed to the organization’s data design standards, e.g., Street Address 1 Text, Street Address 2 Text;</li>
+		<li><strong>Allowed values</strong> – the codes, minimum/maximum ranges, etc. which are acceptable, e.g., M, F, U;</li>
+		<li><strong>Values format</strong> – how the values are represented, e.g., MMDDYYYY, 60x (text characters), 999-99-9999 (SSN), 2x (state code), 9-999-999-9999 (phone number), etc.;</li>
+		<li><strong>Originating data source(s)</strong> (if acquired) – e.g., Registration Capture System;</li>
+		<li><strong>Source table name</strong> – the name of the table within the source, if applicable, e.g., PT_PRFLE (patient profile);</li>
+		<li><strong>Source column name</strong> – the name of the column containing the data in the data source, e.g., PT_FRST_NM;</li>
+		<li><strong>Physical name</strong> – the name of the term developed for the physical database in which it is or will be stored, applying physical data standards, e.g. ST_ADDR_1_TX; and</li>
+		<li><strong>Quality rule(s)</strong> – the automated test or tests that will be applied to the data element upon entry, e.g., First Name must contain more than one character, First Name must contain a single word (no extra components such as suffixes).</li>
+	</ul>
+ 
+	<p>It can be observed from the sample list above, which may vary according to the organization, that the data requirements definition process is dependent on, or may become the occasion for, executing many of the data management processes described in this document, supported by corresponding work products:  Business Glossary, Metadata Management, Data Governance, Data Lifecycle Management, Data Quality Assessment, Data Cleansing and Improvement, and Provider Management.  This is a practical illustration of the synergy of best practices.</p>
+
+	<p>The organization should apply the requirements definition process and standard template when considering adding new patient demographic data elements, such as mother’s maiden name, previous address, previous phone number, etc.  The effects on existing business processes, matching algorithms, confidence in patient identity, and projected development and maintenance costs should be analyzed and reviewed and approved through governance.</p> 
+
+	<p>Adopting data requirements from regulatory and industry sources is highly advised an organization seeking to improve the quality of its patient demographic data. For example, there are a number of healthcare industry efforts underway to advocate adoption of standardized data attributes to improve patient identity integrity.  The recommended data sets proposed to improve matching vary; a number of relevant standards are referenced in the “Patient Identification and Matching Final Report,” published by Audacious Inquiry in 2014 for ONC.</p>
+
+	<p>Establishing and following sound practices for defining data requirements is critical to minimizing data complexity over time.  Effectively implementing this process will yield the following benefits:  Ensures that knowledgeable individuals determine what data is needed;  Increases the ability to share data across the organization and among organizations;  Ensures proactive data quality measures are built into systems and data stores;  Strengthens the relationship between data and business processes;  Establishes data ownership, stewardship, and lineage; and  Enhances the business glossary and builds metadata assets. </p>
+
 	<h3 id="" class="subheading">Data Lifecycle Management</h3>
+
+	<h4>Purpose</h4>
+
+	<p>Ensures that the organization understands, inventories, maps, and controls its data, as it is created and modified through business processes throughout the data lifecycle, from creation or acquisition to retirement.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Data lifecycle management enables an organization to avoid data risks and supports the discovery and application of needed data quality improvements.  It is a particularly important topic when addressing interdependent business processes that share or modify data. The data lifecycle begins with the creation of data at its point of origin through its useful life in the business processes dependent on it, and its eventual retirement, archiving, or destruction. An organization benefits from defining data usage and corresponding dependencies across business processes, for data that is either required by multiple business processes or critical for important business functions.</p>
+
+	<p>The classification of lifecycle phases for data assets typically includes the following sequential categories:</p>
+	<ul>
+		<li>Business specification (e.g., data requirements, business terms, metadata);</li>
+		<li>Origination (i.e., the point of data creation or acquisition by the organization);</li>
+		<li>Development (e.g., architecture and logical design);</li>
+		<li>Implementation (i.e., physical design, initial population in data store(s));</li>
+		<li>Deployment (i.e., rollout of physical data usage in an operational environment);</li>
+		<li>Operations (e.g., data modifications, data transformations, and integration performance monitoring and maintenance); and</li>
+		<li>Retirement (i.e., retirement, archiving, and destruction).</li>
+	</ul>
+
+	<p>Data within each major subject area (i.e., broad data groupings such as Organizations, Facilities, Persons) is also classified, traced, and sequenced by its creation, modification, or usage within the primary business processes of the organization.  For example, a new patient is registered and provides insurance information, the patient then sees a physician, is subject to treatment and/or laboratory tests, and returns for a followup visit; the patient’s insurance is submitted, the insurance payment is received, and the patient is billed.</p>
+
+	<p>The corresponding business processes that creates data would be:  Demographic and insurance data is captured through the registration process; office visit information, diagnosis and  treatment data, and provider notes are captured through the clinicial evaluation and diagnosis process; laboratory data is captured when tests are ordered and when lab results data is added; returning patient data is again captured through the registration process; procedures are documented and sent through the insurance claims process; insurance payments are recorded for that patient through the payment receipt and allocation process; and a bill for uncovered charges is sent through the billing process.</p>
+
+	<p>All of the above processes create data about a patient; however, central to them all is patient demographic data. Duplicate records caused by a lack of patient identity integrity, most often occuring at the point of origination through the registration process, can affect treatment, testing, insurance claims, and billing. The demographic data about a patient is a critical data set, and its reference and usage throughout the healthcare lifecycle is ubiquitous.  Therefore, it is recommended that organizations analyze every process where it is created and updated, both to ensure completeness and accuracy within patient records and to prevent duplicate records.</p> 
+
+	<p>It is advised to identify dependencies among business processes using patient demographic data at the attribute level, enabling the organization to develop a comprehensive understanding of data interrelationships. If external organizations are involved in capturing or modifying the data, it may be necessary to determine what processes they follow to discover where defects, anomalies, or missing data occurs.</p>
+
+	<p>The first step in mapping patient demographic data to supplying and consuming business processes is to model each process that produces, modifies, or consumes the data.  This can begin as simply as creating a sequential activity list, indicating what the usage is with respect to the data.  For example, it may be that under no circumstances would a nurse or provider providing clinical care ever make a change in demographic data.  In that case, the usage can be classified as Reference (aka, “Read” access) for that business process.  However, it may be that the claims or billing processes occasionally surface the need to correct an inaccurate ZIP code, so that process usage may be classified as Modify.</p>
+
+	<p>For any usage other than Reference, the organization can zero in on the activity step within the business process and determine if there is potential for introducing errors.  This may lead to improvements in the business process or procedures.</p>
+
+	<p>If the organization has multiple data stores containing patient demographic data, establishing the source to target(s) mapping is another highly useful activity. This consists of the identificaion of data elements at the point of origin, the identification of other data destinations, the mapping of the representation in the source to the representation in the target(s).  For example, the street address in a patient record as captured in registration may be initially stored as Street Address with a 60 character length limit, when transferred to another system it may be stored as Patient Address with a 40 character length limit, and when transferred to still another system it may be stored as Address with a 50 character length limit.</p>
+
+	<p>Understanding where the data comes from, where it goes, and who can modify it is essential to effective prevention of defects and proactive efforts for data improvement. Over time, the organization is advised to map all business processes involving patient demographic data. Once established, mapping may be reviewed periodically and updated to reflect changes.</p>
+
+	<p>The data management function (or role), working with business experts, business process architects, and other stakeholders, often through a data working group (See Governance Management), is typically charged with facilitating the definition and verification of business process to data requirements. The data management function also typically develops and maintains data lifecycle management processes.</p>
+
+	<p>When data usage has been mapped to business processes and data has been traced from source to target(s), the organization can realize the following benefits:</p>
+	<ul>
+		<li>Identify and reduce process and data bottlenecks;</li>
+		<li>Control redundancy through more accurate identification of duplicate records;</li>
+		<li>Minimize or eliminate unwanted changes to data content;</li>
+		<li>Improve consistency, reliability, and access to needed data;</li>
+		<li>Improve the ability to perform root cause analysis;</li>
+		<li>Trace data lineage across the patient demographic lifecycle; and</li>
+		<li>Improve management of historical data</li>
+	</ul>
 
 	<h3 id="" class="subheading">Data Provider Management</h3>
 
+	<h4>Purpose</h4>
+
+	<p>Optimize internal and external data sourcing to meet business requirements, apply quality considerations, and manage data provisioning agreements consistently. </p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Most organizations acquire data from either external or internal sources. It is frequently found that the performance of sources (e.g., the timeliness and completeness of data provided) does not meet the organization’s expectations.  Similarly, data quality can be sub-optimal for the organization’s needs.  The questions for the organization in this process area address best practices for: defining data sourcing requirements, acquiring and providing data that meets quality expectations, managing agreements, and interacting with providers.</p>
+
+	<p>Effective management of providers helps assure quality data delivery, assists with selecting the service providers for the organization’s needs, and improving the cross-organization match rates for patient identity when data is shared. It is recommended that service level agreements (SLAs) be established by the receiving organization, with both external and internal data providers, specifying what data will be provided, the quality rules it should conform to, and performance thresholds (i.e., minimum expectations for timeliness, completeness, providing updates, etc.). It is also advised to specify in the SLA or contract that the vendor must provide an organization its own patient data at no cost for purposes of analysis. </p>  
+
+	<p>Data sourcing decisions need to reflect the needs of data consumers to ensure that requirements can be satisfied with appropriate data sources, whether internal or external. This process ensures that delivered data will meet business needs. An organization should determine parameters against which alternative sources will be compared and selected.  This will help the organization discover if data elements provided by a source need to be combined (e.g., Patient First Name and Patient Last Name combined into Patient Name in the destination), split (e.g. Patient Name split into Patient First Name and Patient Last Name), or have business rules applied (e.g., new data element Mother Maiden Name) to satisfy business requirements.  Mapping of a data source (i.e., data elements provided by the source, mapped to the destination data store(s)) is enabled by precise business terms and definitions, data profiling analysis results, as appropriate, and clear data requirements.</p> 
+
+	<p>For patient demographic data, the receiving organization should include in the SLA that a data provider should engage in bi-directional communication when patient identity matching cannot be accomplished. The provider should communicate a report that contains the number of matching failures per upload, accompanied by delivery of the records that were involved in the failures. In addition, a data provider should communicate the algorithm(s) that they employ for matching, with an accompanying list of data elements employed.  Mandatory versus optional data elements should be included, as appropriate.</p>  
+
+	<p>Data quality criteria (e.g., thresholds, targets, and quality rules) are integral to data sourcing decisions and should be used to compare sourcing alternatives and develop SLAs with the selected data providers.</p>
+
+	<p>Assessing the quality of sourced data over time should be based upon metrics (e.g., number of records provided with no birth date, etc.) that are established through data quality processes (See the Data Quality category) and performance statistics, such as data error handling, provider responses to requests, and issues escalation.  Data integrity can be enhanced by implementing appropriate controls for authorization and access (See Data Standards).</p> 
+
+	<p>Finally, the organization should regularly monitor delivered data, at a frequency commensurate with its criticality, to ensure that criteria continue to be satisfied. To resolve issues and work with providers to improve data delivery, it is useful to know how providers produce and deliver their data. This knowledge is best acquired and applied prior to connection; it will assist the organization in working with the provider to correct errors, apply additional quality rules as warranted, and thus increase consumer confidence in the data.</p>
+
+	<p>An organization that implements sound provider management processes will realize the following benefits:</p>
+	<ul>
+		<li>Assurance that the right data is delivered to consumers;</li>
+		<li>Improved data quality for delivered data;</li>
+		<li>Increased understanding of the data among consumers;</li>
+		<li>Increased clarity of agreements on authoritative data sources;</li>
+		<li>Reduced lag time in defining new requirements;</li>
+		<li>Simplification of the data source selection process; and</li>
+		<li>Reduced risk, rework, and duplicative costs</li>
+	</ul>
 
 </div> <!-- end center content -->
 

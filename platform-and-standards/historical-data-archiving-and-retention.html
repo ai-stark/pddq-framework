@@ -12,6 +12,39 @@ left-content-nav-order: 4
 
 	<h3 id="" class="subheading">Historical Data, Archiving, and Retention</h3>
 
+	<h4>Purpose </h4>
+
+	<p>Ensure that data maintenance will satisfy organizational and regulatory requirements for historical data availability, and that legal and regulatory requirements for data archiving and retention of data are met.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Historical data management addresses multiple business purposes. It defines how data history will be captured and tracked (e.g., changes to data, versioning) as well as how data is managed in later stages of the lifecycle, including:</p>
+	<ul>
+		<li>Retaining and archiving data / records</li>
+		<li>Reducing data store size to improve performance in production;</li>
+		<li>Restoring a data state at a specific point in time; and</li>
+		<li>Satisfying internal and external retention requirements.</li>
+	</ul>
+
+	<p>Most states have laws and regulations governing the retention of patient medical records.  As such, historical data should be maintained by the organization in accordance with all applicable state laws, and once those requirements have been met, managing historical data in a consistent manner, as business needs dictate. Historical patient demographic data is not always captured and maintained.  However, it can improve the success of patient identity integrity matching algorithms. Data elements that are frequently proposed to reduce the occurrence of duplicates include: the patient’s previous name(s); previous phone number(s); and previous address(es).  If an organization develops its own data stores, it is recommended to design them such that historical data is included.  If the organization does not host its own data, the ability of a service provider to capture this information should be a factor in vendor selection.</p>
+
+	<p>An organization must also define its criteria for retaining data, and ensure that they are in compliance with all applicable state laws in their definitions. This is best accomplished by developing a standard process and guidelines for data archiving. Retention requirements are driven by regulations that dictate mandatory retention periods, data encryption, and the ability to edit the archived data. Internal data retention requirements should be defined and documented, ensuring that each business unit has clearly defined its retention requirements for both existing data stores and planned initiatives. This is also the precursor to determining when to archive aged records.</p>
+
+	<p>If an organization develops data stores internally, it is advised to define a core set of rules for implementing data history (e.g., data modeling rules, history updates, etc.) and standardize conventions. Each data set, application data store, or data repository will also have specific historical data requirements.</p>
+
+	<p>Large data stores in operational systems may improve performance if data is archived.  For example, a health care practice may decide to archive a patient’s record after a defined number of years if the patient has not returned. When archiving, the organization is advised to specify the business rules applied to determine when data is archived, and the requirements governing restoration and access. For example, a regulation may require retention of patient records for a number of years after the status of the individual is complete (e.g., inactive, transferred, deceased, etc.). It is useful to monitor data stores periodically for archive-ready records. In addition, business rules specify additional constraints; for example, not allowing archiving if there has been a patient-initiated contact within a certain time period. Since the performance of large data stores is impacted by the number of records, archiving aged data can improve performance.  Monitoring established thresholds can be conducted to indicate that the archive threshold for a record has been met.</p>
+
+	<p>Organizations should also ensure that they follow all HIPAA requirements for the destruction of protected health information (PHI).  Organizations should review the Office of Civil Rights guidance on data destruction and ensure their policies and practices align to it.</p>
+
+	<p>An organization that manages historical data well, understands its record retention requirements, and has an archiving plan can realize the following benefits:</p>
+	<ul>
+		<li>Broad staff understanding of the business purposes for capturing and retaining historical data and associated requirements;</li>
+		<li>Better results in minimizing duplicate patient records;</li>
+		<li>Compliance with records retention regulations;</li>
+		<li>A consistent set of archiving criteria to increase data store performance; and</li>
+		<li>Ability to restore of a data state at a specific point in time.</li>
+	</ul>
+
 </div> <!-- end center content -->
 
 
