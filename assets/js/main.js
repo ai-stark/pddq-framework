@@ -28,57 +28,45 @@ $(function(){
 
 
 var attainment_fields = $('.attainment-fields');
-var evidence_fields = $('.evidence-fields');
-var notes_fields = $('.notes-fields');
-var numOfFields = $('.attainment-fields').length
+//var evidence_fields = $('.evidence-fields');
+var worksheet_fields = $('.worksheet-fields');
+
+
+//var numOfFields = $('.attainment-fields').length
 
 
 $( document ).ready(function() {
 
 	if(localStorage.length > 0){
-	    for(var index=0; index < numOfFields; index++){
-
-			$('#'+ attainment_fields[index].id).val(localStorage.getItem('attainment' + index));
-			$('#'+ evidence_fields[index].id).val(localStorage.getItem('evidence' + index));
-			$('#'+ notes_fields[index].id).val(localStorage.getItem('notes' + index));
+		for(var index=0; index < localStorage.length; index++){
+			$('#' + localStorage.key(index)).val(localStorage.getItem(localStorage.key(index)));
+			console.log(localStorage.key(index));
 		}
 	}
-
 });
 
 
 
 
-$(attainment_fields).on('change', function(){
+$(worksheet_fields).on('change', function(){
 
-	for(var index=0; index < attainment_fields.length; index++){
-		//console.log(attainment_fields[index].id);
-		localStorage.setItem(('attainment' + index), $('#'+ attainment_fields[index].id).val());
-		$('#'+ attainment_fields[index].id).val(localStorage.getItem('attainment' + index));
-		//console.log("triggered");
-	}
+	localStorage.setItem((this).id, ($(this).val()));
 
 });
 
 
-$(evidence_fields).on('change', function(){
+/*$(evidence_fields).on('change', function(){
 
-	for(var index=0; index < evidence_fields.length; index++){
-		localStorage.setItem(('evidence' + index), $('#' + evidence_fields[index].id).val());
-		$('#'+ evidence_fields[index].id).val(localStorage.getItem('evidence' + index));
-		//console.log("triggered");
-	}
+	localStorage.setItem((this).id, ($(this).val()));
+
 });
 
 
 $(notes_fields).on('change', function(){
 
-	for(var index=0; index < notes_fields.length; index++){
-		localStorage.setItem(('notes' + index), $('#' + notes_fields[index].id).val());
-		$('#'+ notes_fields[index].id).val(localStorage.getItem('notes' + index));
-		//console.log("triggered");
-	}
-});
+	localStorage.setItem((this).id, ($(this).val()));
+
+});*/
 
 
 
