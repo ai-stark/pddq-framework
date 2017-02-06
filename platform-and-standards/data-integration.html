@@ -12,18 +12,40 @@ left-content-nav-order: 3
 
 	<h3 id="" class="subheading">Data Integration</h3>
 
+	<h4>Purpose</h4>
+
+	<p>Reduce the need to to obtain data from multiple sources and improve data consistency and availability for business processes that require record integration or merging, multi-source data consolidation, and aggregation or reporting.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Data integration addresses data transport and processing (linking, combining, deduplication of records, etc.).  The term is most frequently described as the mechanism for transforming and integrating data from multiple sources into a target destination environment, but also can refer to the activities of matching, merging, and deleting records within a single data store, therefore many recommended practices within the scope of this topic also apply to smaller organizations which may host only a single data store.</p>
+
+	<p>Data integration challenges can be extensive: diverse data representations in multiple sources, discrepancies in business meaning for the same or similar terms, exact requirements development for the target result, and the defined steps for how to achieve it, etc. Although the mechanics of data integration are usually handled by information technology resources, it is very important to engage representatives from supplying and consuming business areas to determine:</p>
+	<ul>
+		<li>Consensus about the desired target result for the selected data set;</li>
+		<li>Agreement about what rules, test, and actions will be applied to the data, and the order of execution;</li>
+		<li>Implementation of quality rules that apply to data at rest and data in motion (i.e., when extracted to another data store);</li>
+		<li>Agreement about how defects and anomalies that may occur will be addressed (e.g. false positives or false negatives, unexpected results, etc.); and</li>
+		<li>Agreement about how data in motion is mapped to the destination, and if more than one source, what order of source precedence should apply to the data being integrated.</li>
+	</ul>
+
+	<p>Successful data integration can be considered a synthesis of many other data management processes.  If sound practices have been implemented for data standards, data requirement definitions, the business glossary, metadata, data profiling, and data quality assessments, integration activities will be much easier to plan, specify, and perform. Where there are gaps in those processes, the activities involved in integrating data will quickly reveal them.</p>
+
+	<p>For organizations that acquire patient records for aggregation, insurance submissions, research, and other purposes, integration and data standards are critical both for data exchange (e.g., the HL7 exchange standard) and for shared respositories intended as authoritative sources.  Data integration required for EHRs depends on complex logic to link records, identify anomalous pairings, and determine duplicates for merging.</p>
+
+	<p>Successful integration efforts, regardless of scope, depend on effective collaboration. Business representatives need to define and validate business and quality rules and IT needs to understand the business use of data to implement rules governing integration within the context of the organization's standards. Patient demographic data can also be improved at the point of integration, or within a data store, through data enrichment.  The business can consider employing data enrichment to improve the data, for instance, employing a service to standardize addresses and apply 9-digit ZIP codes, or utilizing a “householding” feature to identify co-located patients.</p>
+
+	<p>Application of sound data integration practices enables an organization to realize the following  benefits:</p>
+	<ul>
+		<li>Creates organization-wide alignment for well-organized, shared and accessible data;</li>
+		<li>Improves source data accuracy and quality via embedded business and quality rules;</li>
+		<li>Improves business logic to identify duplicate records;</li>
+		<li>Increases data quality optimization for data at rest and in motion;</li>
+		<li>Reduces manual efforts spent fixing data; and</li>
+		<li>Improves timely delivery of well-structured data content.</li>
+	</ul>	
+
 </div> <!-- end center content -->
 
 
-
-
-
-<div class="pure-u-5-24 right-content">
-	<div class="trigger-wrap">
-		<div class="worksheet-trigger">
-			<a href="" class="btn-evaluate">
-				<span>Evaluate your Organization</span>
-			</a>
-		</div>
-	</div>
-</div>
+{% include right-content.html %}

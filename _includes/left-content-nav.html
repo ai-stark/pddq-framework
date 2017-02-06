@@ -1,40 +1,35 @@
-{% assign url_parts = page.url | split: "/" %}
-{% assign url_parts_size = url_parts | size %}
-{% assign rm = url_parts | last %}
-{% assign base_url = page.url | remove: "/" | replace: rm, "" %}
-
-
 <div class="pure-u-5-24 left-content">
 
+{% assign groups = site.pages %}
+{% assign pages = page.group | slugify %}
 
-	<h2>{{ page.group }}</h2>
+{% for group in groups %}
 
-	<ul>
+	{% if group.slug == pages %}
 	
-	{% assign nav_pages = site.pages | sort: 'left-content-nav-order' %}
+		<h2><a href="{{site.baseurl}}/{{site.data.worksheet-menu[group.slug].parent | slugify}}">{{site.data.worksheet-menu[group.slug].parent}}</a></h2>
 
-	{% for node in nav_pages %}
-	
-		{% if node.url contains base_url %}
-	    	{% assign node_url_parts = node.url | split: '/' %}
-	    	{% assign node_url_parts_size = node_url_parts | size %}
-	    	{% assign filename = node_url_parts | last %}
-	    	{% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+			<ul>
+				{% for child in site.data.worksheet-menu[group.slug].children %}
 
-				
-	      		<li class="{% if page.title == node.title %}selected{% endif %}"><a href='{{site.baseurl}}{{node.url}}'>{{ node.title }}</a></li>
+					<li class="{% if page.title == child.name %}selected{% endif %}"><a href="{{site.baseurl}}/{{pages}}/{{child.name | slugify}}">{{ child.name }}</a></li>
 
+				{% endfor %}
+			</ul>
 
-	    	{% endif %}
+	{% endif %}
 
-	  	{% endif %}
+{% endfor %}
 
-	{% endfor %}
-		
-		<!-- <li><a href="{{ site.baseurl }}/introduction/background">Background</a></li>
-		<li><a href="{{ site.baseurl }}/introduction/about-pddq-framework">About the PDDQ Framework</a></li>
-		<li><a href="{{ site.baseurl }}/introduction/audience">Audience</a></li>
-		<li><a href="{{ site.baseurl }}/introduction/pddq-framework">PDDQ Framework</a></li>
-		<li><a href="{{ site.baseurl }}/introduction/framework-organization">Framework Organization</a></li> -->
-	</ul>
 </div>
+
+<!-- <h2>{{ page.group }}</h2>
+
+{% for pages in page.left-nav %}
+
+	<li class="{% if page.title == node.title %}selected{% endif %}"><a href='{{site.baseurl}}/{{page.slug}}/{{pages | slugify}}'>{{ pages }}</a></li>
+
+{% endfor %}
+
+</div>
+ -->

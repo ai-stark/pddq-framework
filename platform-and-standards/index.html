@@ -1,6 +1,7 @@
 ---
 layout: standard-page
 title: Platform and Standards
+slug: platform-and-standards
 group: Platform and Standards
 left-content-nav-order: 0
 ---
@@ -9,28 +10,161 @@ left-content-nav-order: 0
 
 
 <div class="pure-u-14-24 center-content">
+
+	<p class="page-definition">Best practices for establishing standards that ensure the implemented data management platform successfully integrates, manages, retains, and provides data assets to support business objectives.</p>
+
+	<p>Platform and Standards contains process areas designed to assist an organization to design and build data stores or acquire data from a data provider, to ensure that:</p>
+	<ul>
+		<li>Present and future business objectives are met by the data assets;</li>
+		<li>Well-crafted and enforceable standards are established, approved, and implemented;</li>
+		<li>The data management platform and supporting technologies meet scope and performance requirements;</li>
+		<li>Disparate sources of data are integrated for operations, reporting, and analytics;</li>
+		<li>Historical data is captured and managed to improve patient identity integrity; and</li>
+		<li>Criteria and rules are applied for data retention, archiving, and destruction of patient demographic data.</li>
+	</ul>
+
+	<p>Data Standards addresses the development and approval of standards for data representation, data access, and data distribution. Data Management Platform advocates stakeholder engagement in and governance approval of decisions that pertain to platform selection and implementation. Data Integration helps the organization design shared data stores and establish standards to improve data consistency and quality. Historical Data, Archiving, and Retention addresses management of historical data, record retention requirements, and data archiving, ensuring that data is available and that regulatory requirements are met.</p> 
+
+	<p>The practices within this category will help an organization implement data stores that minimize redundancies, meet performance requirements, and ensure availability of patient demographic data for all involved stakeholders. Well-developed practices also ensure that the organization’s data stores are supported by comprehensive applicable standards and are deployed on a platform that is flexible and extensible for modifications and future requirements. Defined practices for data integration increase availability of high quality data, and improved processes for capturing and managing historical data and treatment of aged data will help satisfy regulatory requirements and increase system performance.</p>
+
+
 	<h3 id="" class="subheading">Data Standards</h3>
+
+	<h4>Purpose</h4> 
+
+	<p>Provides an approved set of expectations for governing architectural components of the data assets. Data standards address data representations, data access, and data distribution fundamental to establishing control over the data layer and the efficient use and exchange of information.</p>
+
+	<h4>Introductory Notes</h4> 
+
+	<p>Data standards define the approach and practices for developing, approving, and instituting compliance for data representation, data access, and data distribution standards.  These standards may include any of the following:</p>
+	<ul>
+		<li><strong>Data representation</strong> – business terms and definitions (See <em>Business Glossary</em>), allowed values (See <em>Metadata Management</em>), formats, logical and physical naming and abbreviation standards, model management standards, etc.</li>
+		<li><strong>Data access</strong> – common data services, information exchange standards (e.g., XML), standard methods for bulk data movement and point-to-point interfaces, data integration standards (e.g., extract, transform, and load standards, etc.)</li>
+		<li><strong>Data distribution</strong> – ownership and authority (See Governance Management), requesting and approving access, internal and external data provisioning (e.g., portals, web services, etc.), distribution controls and criteria-based access restrictions, distribution models (e.g., push, pull, publish, and subscribe, etc.), regulatory authority and audit, etc.</li>
+	</ul>
+
+	<p>The organization’s standards influence platform choices, technology and tool selection, common integration rules, and the system development / data design process.  Development of standards is essential. For example, variances in standards for patient demographic data across different vendor products and between organizations can cause increased incidence of duplicate records and sub-optimal results for matching algorithms.  For organizations building their own systems, a standards-driven approach will prevent many potential issues in integrating data, migrating legacy systems, and redesigning existing data stores.</p>
+
+	<p>Consistently following standards for data formats at the point of capture / data entry is a critical activity in preventing incorrect or ambiguous patient identity. For example, entering both first and last names in a Patient First Name field or entering a birth date (where not restricted by screen edits) in MMDDYY versus MMDDYYY format, will create the potential for identification errors.</p> 
+
+	<p>It is important for business representatives to take an active role through data governance in considering and approving data standards. If an organization can successfully employ a collaborative approach among stakeholders, it can define a systematic, governed process to develop, institutionalize, promote, and enforce standards that are aligned with organizational objectives and architectural decisions.</p> 
+
+	<p>Once established and extended across the organization, supported by active governance, the collective set of data standards provides the following benefits:</p>
+
+	<ul>
+		<li>Builds staff knowledge about and understanding of the data;</li>
+		<li>Improves the consistency of the patient data for all purposes;</li>
+		<li>Contributes to the population of the metadata repository;</li>
+		<li>Enables improvements to the design process for data stores;</li>
+		<li>Improves the accuracy and quality of data exchanged among organizations;</li>
+		<li>Improves the technology selection process; and</li>
+		<li>Reduces costs and effort by reusing established standards and preventing ad hoc creation of standards.</li>
+	</ul>
 	
 	<h3 id="" class="subheading">Data Management Platform</h3>
 
+	<h4>Purpose</h4>
+
+	<p>Developing or acquiring an effective technology solution and infrastructure that satisfies current and anticipated future business data needs.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>A data management platform may range from a single data store supported by software functionality to a broad and complex set of technologies and features supporting multiple operational systems and repositories.  The platform serves as a system of record, a trusted source or authoritative source of patient demographic data.  Its scope typically includes mechanisms to support data distribution, transformation, and integration into consuming internal or external applications.</p>
+
+	<p>Whatever the size, scope, or complexity may be, the data management platform hosting a data set describes the technological infrastructure surrounding the data, managed under a common authority (an owner, information technology, a service level agreement, etc.).  Although most organizations host multiple data stores and enabling technologies to manage data across key business processes to meet data management objectives, the questions posed in this section apply to both the overall platform instantiation as well as any components.</p>
+
+	<p>Since the data management platform significantly impacts timeliness, accuracy, data access, and performance, the platform selection process should be well aligned with priority data management initiatives and the organization’s data quality plan to ensure that features and capabilities required by data consumers will be supported.</p>
+
+	<p>When considering the need for a new platform, the first evaluation area to address is “build or buy.”  The organization is advised to inventory existing data stores and corresponding capabilities. This activity should be requirements-driven, based on consensus about the features needed to improve the overall quality of patient demographic data.  Many useful considerations that can be applied are addressed in a number of process areas in this document.</p>
+
+	<p>A requirements-based approach is likely to surface any gaps, for instance: the organization has decided to capture and store historical names and addresses for patients, but the capability does not exist in the current platform; or the organization currently matches patient identities manually, but would like the platform to provide functionality for an embedded algorithm for record matching. The gap analysis should be performed at a level of detail that will help determine if possible modifications to the existing platform could meet requirements in a costeffective manner.</p>
+
+	<p>The platform should be evaluated for its ability to support the organization’s data standards, e.g., the ability to capture a country code for a phone number.  Supporting requirements, such as data access controls and data privacy considerations (e.g., masking all but the last four digits of a Social Security Number) should be also factored into the evaluation effort.  In addition, the platform should also be evaluated for desirable features such as accommodation of common data exchange standards and mechanisms, automated configurable workflow, allowing an authorized user to add quality rules, and notification of potential duplicate records, etc.</p> 
+  
+	<p>Typically, the data management function and/or information technology develop a selection template containing features, standards, technology parameters, cost, and other factors.  Then governance is engaged to ensure that all stakeholders across the patient demographic data lifecycle have had a change to propose modified or additional requirements. The responsible team can present the results of research, proofs of concept, demos, etc. for the competing products to the governance body for their input. This approach should yield a well-informed consensus decision and significantly reduce the risk of leaving out a feature or requirement that may prove to be important after implementation.</p>
+
+	<p>Organizations which approach the data management platform decisions as described above will realize the following benefits:</p>
+	<ul>
+		<li>Establish data management platforms that meet business needs and specific requirements;</li>
+		<li>Ensure that the platform is secure, resilient, extensible, and flexible for future changes;</li>
+		<li>Improve the quality of patient demographic data across the organization’s lifecycle;</li>
+		<li>Realize gains in staff efficiency and higher productivity;</li>
+		<li>Experience increased coordination among data suppliers and consumers; and</li>
+		<li>Realize additional benefits from inclusion of useful features such as workflow and notifications.</li>
+	</ul>
+
 	<h3 id="" class="subheading">Data Integration</h3>
+
+	<h4>Purpose</h4>
+
+	<p>Reduce the need to to obtain data from multiple sources and improve data consistency and availability for business processes that require record integration or merging, multi-source data consolidation, and aggregation or reporting.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Data integration addresses data transport and processing (linking, combining, deduplication of records, etc.).  The term is most frequently described as the mechanism for transforming and integrating data from multiple sources into a target destination environment, but also can refer to the activities of matching, merging, and deleting records within a single data store, therefore many recommended practices within the scope of this topic also apply to smaller organizations which may host only a single data store.</p>
+
+	<p>Data integration challenges can be extensive: diverse data representations in multiple sources, discrepancies in business meaning for the same or similar terms, exact requirements development for the target result, and the defined steps for how to achieve it, etc. Although the mechanics of data integration are usually handled by information technology resources, it is very important to engage representatives from supplying and consuming business areas to determine:</p>
+	<ul>
+		<li>Consensus about the desired target result for the selected data set;</li>
+		<li>Agreement about what rules, test, and actions will be applied to the data, and the order of execution;</li>
+		<li>Implementation of quality rules that apply to data at rest and data in motion (i.e., when extracted to another data store);</li>
+		<li>Agreement about how defects and anomalies that may occur will be addressed (e.g. false positives or false negatives, unexpected results, etc.); and</li>
+		<li>Agreement about how data in motion is mapped to the destination, and if more than one source, what order of source precedence should apply to the data being integrated.</li>
+	</ul>
+
+	<p>Successful data integration can be considered a synthesis of many other data management processes.  If sound practices have been implemented for data standards, data requirement definitions, the business glossary, metadata, data profiling, and data quality assessments, integration activities will be much easier to plan, specify, and perform. Where there are gaps in those processes, the activities involved in integrating data will quickly reveal them.</p>
+
+	<p>For organizations that acquire patient records for aggregation, insurance submissions, research, and other purposes, integration and data standards are critical both for data exchange (e.g., the HL7 exchange standard) and for shared respositories intended as authoritative sources.  Data integration required for EHRs depends on complex logic to link records, identify anomalous pairings, and determine duplicates for merging.</p>
+
+	<p>Successful integration efforts, regardless of scope, depend on effective collaboration. Business representatives need to define and validate business and quality rules and IT needs to understand the business use of data to implement rules governing integration within the context of the organization's standards. Patient demographic data can also be improved at the point of integration, or within a data store, through data enrichment.  The business can consider employing data enrichment to improve the data, for instance, employing a service to standardize addresses and apply 9-digit ZIP codes, or utilizing a “householding” feature to identify co-located patients.</p>
+
+	<p>Application of sound data integration practices enables an organization to realize the following  benefits:</p>
+	<ul>
+		<li>Creates organization-wide alignment for well-organized, shared and accessible data;</li>
+		<li>Improves source data accuracy and quality via embedded business and quality rules;</li>
+		<li>Improves business logic to identify duplicate records;</li>
+		<li>Increases data quality optimization for data at rest and in motion;</li>
+		<li>Reduces manual efforts spent fixing data; and</li>
+		<li>Improves timely delivery of well-structured data content.</li>
+	</ul>	
 
 	<h3 id="" class="subheading">Historical Data, Archiving, and Retention</h3>
 
+	<h4>Purpose </h4>
+
+	<p>Ensure that data maintenance will satisfy organizational and regulatory requirements for historical data availability, and that legal and regulatory requirements for data archiving and retention of data are met.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Historical data management addresses multiple business purposes. It defines how data history will be captured and tracked (e.g., changes to data, versioning) as well as how data is managed in later stages of the lifecycle, including:</p>
+	<ul>
+		<li>Retaining and archiving data / records</li>
+		<li>Reducing data store size to improve performance in production;</li>
+		<li>Restoring a data state at a specific point in time; and</li>
+		<li>Satisfying internal and external retention requirements.</li>
+	</ul>
+
+	<p>Most states have laws and regulations governing the retention of patient medical records.  As such, historical data should be maintained by the organization in accordance with all applicable state laws, and once those requirements have been met, managing historical data in a consistent manner, as business needs dictate. Historical patient demographic data is not always captured and maintained.  However, it can improve the success of patient identity integrity matching algorithms. Data elements that are frequently proposed to reduce the occurrence of duplicates include: the patient’s previous name(s); previous phone number(s); and previous address(es).  If an organization develops its own data stores, it is recommended to design them such that historical data is included.  If the organization does not host its own data, the ability of a service provider to capture this information should be a factor in vendor selection.</p>
+
+	<p>An organization must also define its criteria for retaining data, and ensure that they are in compliance with all applicable state laws in their definitions. This is best accomplished by developing a standard process and guidelines for data archiving. Retention requirements are driven by regulations that dictate mandatory retention periods, data encryption, and the ability to edit the archived data. Internal data retention requirements should be defined and documented, ensuring that each business unit has clearly defined its retention requirements for both existing data stores and planned initiatives. This is also the precursor to determining when to archive aged records.</p>
+
+	<p>If an organization develops data stores internally, it is advised to define a core set of rules for implementing data history (e.g., data modeling rules, history updates, etc.) and standardize conventions. Each data set, application data store, or data repository will also have specific historical data requirements.</p>
+
+	<p>Large data stores in operational systems may improve performance if data is archived.  For example, a health care practice may decide to archive a patient’s record after a defined number of years if the patient has not returned. When archiving, the organization is advised to specify the business rules applied to determine when data is archived, and the requirements governing restoration and access. For example, a regulation may require retention of patient records for a number of years after the status of the individual is complete (e.g., inactive, transferred, deceased, etc.). It is useful to monitor data stores periodically for archive-ready records. In addition, business rules specify additional constraints; for example, not allowing archiving if there has been a patient-initiated contact within a certain time period. Since the performance of large data stores is impacted by the number of records, archiving aged data can improve performance.  Monitoring established thresholds can be conducted to indicate that the archive threshold for a record has been met.</p>
+
+	<p>Organizations should also ensure that they follow all HIPAA requirements for the destruction of protected health information (PHI).  Organizations should review the Office of Civil Rights guidance on data destruction and ensure their policies and practices align to it.</p>
+
+	<p>An organization that manages historical data well, understands its record retention requirements, and has an archiving plan can realize the following benefits:</p>
+	<ul>
+		<li>Broad staff understanding of the business purposes for capturing and retaining historical data and associated requirements;</li>
+		<li>Better results in minimizing duplicate patient records;</li>
+		<li>Compliance with records retention regulations;</li>
+		<li>A consistent set of archiving criteria to increase data store performance; and</li>
+		<li>Ability to restore of a data state at a specific point in time.</li>
+	</ul>
 
 </div> <!-- end center content -->
 
 
-
-
-
-<div class="pure-u-5-24 right-content">
-	<div class="trigger-wrap">
-		<div class="worksheet-trigger">
-			<a href="" class="btn-evaluate">
-				<span>Evaluate your Organization</span>
-			</a>
-		</div>
-	</div>
-</div>
+{% include right-content.html %}
 

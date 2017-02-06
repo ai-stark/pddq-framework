@@ -12,18 +12,54 @@ left-content-nav-order: 2
 	
 	<h3 id="" class="subheading">Data Lifecycle Management</h3>
 
+	<h4>Purpose</h4>
+
+	<p>Ensures that the organization understands, inventories, maps, and controls its data, as it is created and modified through business processes throughout the data lifecycle, from creation or acquisition to retirement.</p>
+
+	<h4>Introductory Notes</h4>
+
+	<p>Data lifecycle management enables an organization to avoid data risks and supports the discovery and application of needed data quality improvements.  It is a particularly important topic when addressing interdependent business processes that share or modify data. The data lifecycle begins with the creation of data at its point of origin through its useful life in the business processes dependent on it, and its eventual retirement, archiving, or destruction. An organization benefits from defining data usage and corresponding dependencies across business processes, for data that is either required by multiple business processes or critical for important business functions.</p>
+
+	<p>The classification of lifecycle phases for data assets typically includes the following sequential categories:</p>
+	<ul>
+		<li>Business specification (e.g., data requirements, business terms, metadata);</li>
+		<li>Origination (i.e., the point of data creation or acquisition by the organization);</li>
+		<li>Development (e.g., architecture and logical design);</li>
+		<li>Implementation (i.e., physical design, initial population in data store(s));</li>
+		<li>Deployment (i.e., rollout of physical data usage in an operational environment);</li>
+		<li>Operations (e.g., data modifications, data transformations, and integration performance monitoring and maintenance); and</li>
+		<li>Retirement (i.e., retirement, archiving, and destruction).</li>
+	</ul>
+
+	<p>Data within each major subject area (i.e., broad data groupings such as Organizations, Facilities, Persons) is also classified, traced, and sequenced by its creation, modification, or usage within the primary business processes of the organization.  For example, a new patient is registered and provides insurance information, the patient then sees a physician, is subject to treatment and/or laboratory tests, and returns for a followup visit; the patient’s insurance is submitted, the insurance payment is received, and the patient is billed.</p>
+
+	<p>The corresponding business processes that creates data would be:  Demographic and insurance data is captured through the registration process; office visit information, diagnosis and  treatment data, and provider notes are captured through the clinicial evaluation and diagnosis process; laboratory data is captured when tests are ordered and when lab results data is added; returning patient data is again captured through the registration process; procedures are documented and sent through the insurance claims process; insurance payments are recorded for that patient through the payment receipt and allocation process; and a bill for uncovered charges is sent through the billing process.</p>
+
+	<p>All of the above processes create data about a patient; however, central to them all is patient demographic data. Duplicate records caused by a lack of patient identity integrity, most often occuring at the point of origination through the registration process, can affect treatment, testing, insurance claims, and billing. The demographic data about a patient is a critical data set, and its reference and usage throughout the healthcare lifecycle is ubiquitous.  Therefore, it is recommended that organizations analyze every process where it is created and updated, both to ensure completeness and accuracy within patient records and to prevent duplicate records.</p> 
+
+	<p>It is advised to identify dependencies among business processes using patient demographic data at the attribute level, enabling the organization to develop a comprehensive understanding of data interrelationships. If external organizations are involved in capturing or modifying the data, it may be necessary to determine what processes they follow to discover where defects, anomalies, or missing data occurs.</p>
+
+	<p>The first step in mapping patient demographic data to supplying and consuming business processes is to model each process that produces, modifies, or consumes the data.  This can begin as simply as creating a sequential activity list, indicating what the usage is with respect to the data.  For example, it may be that under no circumstances would a nurse or provider providing clinical care ever make a change in demographic data.  In that case, the usage can be classified as Reference (aka, “Read” access) for that business process.  However, it may be that the claims or billing processes occasionally surface the need to correct an inaccurate ZIP code, so that process usage may be classified as Modify.</p>
+
+	<p>For any usage other than Reference, the organization can zero in on the activity step within the business process and determine if there is potential for introducing errors.  This may lead to improvements in the business process or procedures.</p>
+
+	<p>If the organization has multiple data stores containing patient demographic data, establishing the source to target(s) mapping is another highly useful activity. This consists of the identificaion of data elements at the point of origin, the identification of other data destinations, the mapping of the representation in the source to the representation in the target(s).  For example, the street address in a patient record as captured in registration may be initially stored as Street Address with a 60 character length limit, when transferred to another system it may be stored as Patient Address with a 40 character length limit, and when transferred to still another system it may be stored as Address with a 50 character length limit.</p>
+
+	<p>Understanding where the data comes from, where it goes, and who can modify it is essential to effective prevention of defects and proactive efforts for data improvement. Over time, the organization is advised to map all business processes involving patient demographic data. Once established, mapping may be reviewed periodically and updated to reflect changes.</p>
+
+	<p>The data management function (or role), working with business experts, business process architects, and other stakeholders, often through a data working group (See Governance Management), is typically charged with facilitating the definition and verification of business process to data requirements. The data management function also typically develops and maintains data lifecycle management processes.</p>
+
+	<p>When data usage has been mapped to business processes and data has been traced from source to target(s), the organization can realize the following benefits:</p>
+	<ul>
+		<li>Identify and reduce process and data bottlenecks;</li>
+		<li>Control redundancy through more accurate identification of duplicate records;</li>
+		<li>Minimize or eliminate unwanted changes to data content;</li>
+		<li>Improve consistency, reliability, and access to needed data;</li>
+		<li>Improve the ability to perform root cause analysis;</li>
+		<li>Trace data lineage across the patient demographic lifecycle; and</li>
+		<li>Improve management of historical data</li>
+
 </div> <!-- end center content -->
 
 
-
-
-
-<div class="pure-u-5-24 right-content">
-	<div class="trigger-wrap">
-		<div class="worksheet-trigger">
-			<a href="" class="btn-evaluate">
-				<span>Evaluate your Organization</span>
-			</a>
-		</div>
-	</div>
-</div>
+{% include right-content.html %}

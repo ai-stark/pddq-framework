@@ -1,0 +1,34 @@
+
+<div class="pure-u-6-24 left-content">
+	<div style="position: relative">
+	<div id="sticky-menu">
+
+		<h2>Evaluate Your Organization</h2>
+
+		{% assign groups = site.pages %}
+
+
+		{% for p in groups %}
+
+			{% if p.slug %}
+			{% unless p.slug == "introduction" %}
+			
+					<h2 style="font-size: 1.143em;">{{site.data.worksheet-menu[p.slug].parent}}</h2>
+
+					<ul>
+					{% for z in site.data.worksheet-menu[p.slug].children %}
+
+						<li class="worksheet-nav" style="font-size: 1em;"><a href="#{{z.name | slugify}}-group">{{ z.name }}</a></li>
+
+					{% endfor %}
+					</ul>
+
+			{% endunless %}
+			{% endif %}
+
+		{% endfor %}
+
+	</div>
+	
+</div>
+</div>

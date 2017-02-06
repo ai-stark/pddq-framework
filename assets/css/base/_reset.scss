@@ -12,5 +12,26 @@ html, button, input, select, textarea,
 	font-family: $font-family-body;
 	color: $text;
 	font-size: 14px;
-	letter-spacing: 1px;
+	letter-spacing: .0714em;
+	line-height: 1.5em; 
 }
+
+
+
+/* Temp css styles */
+
+.element-invisible {
+  position: absolute;
+  top: -999999em;
+  left: auto;
+  width: 1px;
+  height: 1px;
+  overflow:hidden;
+}
+ 
+
+#sticky-menu.sticky{
+	position: fixed;	
+	top: 0px;
+}  
+
