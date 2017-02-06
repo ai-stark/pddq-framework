@@ -7,7 +7,7 @@
 
 	{% if group.slug == pages %}
 	
-		<h2>{{site.data.worksheet-menu[group.slug].parent}}</h2>
+		<h2><a href="{{site.baseurl}}/{{site.data.worksheet-menu[group.slug].parent | slugify}}">{{site.data.worksheet-menu[group.slug].parent}}</a></h2>
 
 			<ul>
 				{% for child in site.data.worksheet-menu[group.slug].children %}
