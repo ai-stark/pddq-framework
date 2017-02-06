@@ -12,10 +12,13 @@
 
 		{% for child in site.data.worksheet-menu[q].children %}
 
-
 			{% if child.name == (page.title | slugify) %}
 
-			<p>This is a child page</p>
+				{% for question in child.evaluation %}
+
+					<p>{{question.question}}</p>
+
+				{% endfor %}
 
 			{% endif %}
 
