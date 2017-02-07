@@ -49,33 +49,35 @@ group: Worksheet
 
 						{% for thing in item.evaluation %}
 
-							<div class="pure-u-9-24">
-								<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block">{{thing.question}}</span>
-							</div>
-
-							<div class="pure-u-3-24">
-								<label class="element-invisible" for="{{ item.name | slugify }}-attainment-{{ forloop.index }}">Attainment</label>
-								<select class="attainment-fields worksheet-fields" name="{{ item.name | slugify }}-attainment-{{ forloop.index }}" id="{{ item.name | slugify }}-attainment-{{ forloop.index }}">
-									<option value="full">Full</option>
-									<option value="partial">Partial</option>
-									<option value="none" selected="selected">None</option>
-								</select>
-							</div>
-
-							<div class="pure-u-6-24">
-								<label class="element-invisible" for="{{ item.name | slugify }}-evidence-{{ forloop.index }}">Evidence</label>
-								<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-evidence-{{ forloop.index }}" id="{{ item.name | slugify }}-evidence-{{ forloop.index }}" rows="5" placeholder="This is where you enter evidence of attainment"></textarea>
-							</div>
-
-							<div class="pure-u-6-24">
-								<label class="element-invisible" for="{{ item.name | slugify }}-notes-{{ forloop.index }}">Notes</label>
-								<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-notes-{{ forloop.index }}" id="{{ item.name | slugify }}-notes-{{ forloop.index }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
-							</div>
+							{% for question in thing.questions %}
 
 
-							<div class="pure-u-1" style="height: 1px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
+								<div class="pure-u-9-24">
+									<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block"><span>{{ question.number }}</span> {{ question.content }}</span>
+								</div>
 
+								<div class="pure-u-3-24">
+									<label class="element-invisible" for="{{ item.name | slugify }}-attainment-{{ forloop.index }}">Attainment</label>
+									<select class="attainment-fields worksheet-fields" name="{{ item.name | slugify }}-attainment-{{ forloop.index }}" id="{{ item.name | slugify }}-attainment-{{ forloop.index }}">
+										<option value="full">Full</option>
+										<option value="partial">Partial</option>
+										<option value="none" selected="selected">None</option>
+									</select>
+								</div>
 
+								<div class="pure-u-6-24">
+									<label class="element-invisible" for="{{ item.name | slugify }}-evidence-{{ forloop.index }}">Evidence</label>
+									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-evidence-{{ forloop.index }}" id="{{ item.name | slugify }}-evidence-{{ forloop.index }}" rows="5" placeholder="This is where you enter evidence of attainment"></textarea>
+								</div>
+
+								<div class="pure-u-6-24">
+									<label class="element-invisible" for="{{ item.name | slugify }}-notes-{{ forloop.index }}">Notes</label>
+									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-notes-{{ forloop.index }}" id="{{ item.name | slugify }}-notes-{{ forloop.index }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
+								</div>
+
+								<div class="pure-u-1" style="height: 1px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
+
+							{% endfor %}
 
 						{% endfor %} <!-- end for -->
 

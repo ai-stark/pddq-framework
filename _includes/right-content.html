@@ -1,32 +1,56 @@
 <div class="pure-u-5-24 right-content">
 
-	
 
-	{% if site.data.worksheet-menu[page.slug].parent == page.title | slugify %}
 
-	<p>This is a parent page</p>
+		{% if site.data.worksheet-menu[page.slug].parent == page.title | slugify %}
 
-	{% else %}
 
-	{% assign q = page.group | slugify %}
+		<p>This is a parent page</p>
 
-		{% for child in site.data.worksheet-menu[q].children %}
+		{% else %}
 
-			{% if child.name == (page.title | slugify) %}
+		{% assign q = page.group | slugify %}
 
-				{% for question in child.evaluation %}
+			{% for child in site.data.worksheet-menu[q].children %}
 
-					<p>{{question.question}}</p>
+				{% if child.name == (page.title | slugify) %}
 
-				{% endfor %}
+					{% for question in child.evaluation %}
 
-			{% endif %}
+						
+							
+								{% case question.tier %}
+								{% when "1" %}
+									<h3>Tier {{ question.tier }}: Foundational <button data-featherlight="#foundational-help">?</button></h3>
+								{% when "2" %}
+									<h3>Tier {{ question.tier }}: Building <button data-featherlight="#building-help">?</button></h3>
+								{% when "3" %}
+									<h3>Tier {{ question.tier }}: Advanced <button data-featherlight="#advanced-help">?</button></h3>
+								{% endcase %}
+						
 
-		{% endfor %}
+						{% for item in question.questions %}
 
-	{% endif %}
+							
+							<p><span>{{ item.number }}</span> {{ item.content }}</p>
 
-	
+						
+
+						{% endfor %}
+
+
+					{% endfor %}
+
+				{% endif %}
+
+			{% endfor %}
+
+		{% endif %}		
+
+		
+		<div id="foundational">This should pop open when foundational is clicked</div>
+		<div id="building">This should pop open when building is clicked</div>
+		<div id="advanced">This should pop open when advanced is clicked</div>
 
 
 
