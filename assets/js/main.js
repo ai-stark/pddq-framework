@@ -78,3 +78,14 @@ $(notes_fields).on('change', function(){
 $('#clear').on("click", function(){
 	localStorage.clear();
 });
+
+
+
+/***********************************
+		TIER HELP BUTTONS
+	RIGHT CONTENT INCLUDE FILE
+************************************/
+
+// $('.tier-help-group').on('click', function(){
+// 	$(this).css('display', 'block');
+// });

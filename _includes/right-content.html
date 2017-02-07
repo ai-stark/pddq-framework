@@ -9,37 +9,45 @@
 
 		{% else %}
 
+		<h3>Practice Evaluation Questions</h3>
+
 		{% assign q = page.group | slugify %}
 
 			{% for child in site.data.worksheet-menu[q].children %}
 
 				{% if child.name == (page.title | slugify) %}
 
+				
+
 					{% for question in child.evaluation %}
 
+						<div class="tier-block">	
+
+							{% case question.tier %}
+							{% when "1" %}
+								<h4>Tier {{ question.tier }}: Foundational<span class="help-icon" data-featherlight="#foundational-help"></span></h4>
+							{% when "2" %}
+								<h4>Tier {{ question.tier }}: Building<span class="help-icon" data-featherlight="#building-help"></span></h4>
+							{% when "3" %}
+								<h4>Tier {{ question.tier }}: Advanced<span class="help-icon" data-featherlight="#advanced-help"></span></h4>
+							{% endcase %}
 						
+
+							{% for item in question.questions %}
+
+								
+								<p><span>{{ item.number }}</span> {{ item.content }}<span class="help-icon" data-featherlight="#{{ child.name | slugify }}-{{ item.number | slugify }}"></span></p> 
+
 							
-								{% case question.tier %}
-								{% when "1" %}
-									<h3>Tier {{ question.tier }}: Foundational <button data-featherlight="#foundational-help">?</button></h3>
-								{% when "2" %}
-									<h3>Tier {{ question.tier }}: Building <button data-featherlight="#building-help">?</button></h3>
-								{% when "3" %}
-									<h3>Tier {{ question.tier }}: Advanced <button data-featherlight="#advanced-help">?</button></h3>
-								{% endcase %}
-						
 
-						{% for item in question.questions %}
+							{% endfor %}
 
-							
-							<p><span>{{ item.number }}</span> {{ item.content }}</p>
-
-						
-
-						{% endfor %}
+						</div> <!-- end block -->
 
 
 					{% endfor %}
+
+
 
 				{% endif %}
 
@@ -48,9 +56,9 @@
 		{% endif %}		
 
 		
-		<div id="foundational-help">This should pop open when foundational is clicked</div>
-		<div id="building-help">This should pop open when building is clicked</div>
-		<div id="advanced-help">This should pop open when advanced is clicked</div>
+		<div class="tier-help-group" id="foundational-help">This should pop open when foundational is clicked</div>
+		<div class="tier-help-group" id="building-help">This should pop open when building is clicked</div>
+		<div class="tier-help-group" id="advanced-help">This should pop open when advanced is clicked</div>
 
 
 
