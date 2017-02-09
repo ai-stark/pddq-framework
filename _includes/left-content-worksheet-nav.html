@@ -5,7 +5,7 @@
 
 		<h2>Evaluate Your Organization</h2>
 
-		{% assign groups = site.pages %}
+		{% assign groups = site.pages | sort: "left-content-nav-order" %}
 
 
 		{% for p in groups %}
