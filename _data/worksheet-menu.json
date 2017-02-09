@@ -46,7 +46,7 @@
 					  				  "questions":[{"number":"3.1",
 					  				  				"content":"Does the organization provide effective communications across the entire lifecycle of patient demographic data?"}]}]},
 
-					 {"name":"Business Glossary, Metadata, and Data Standards",
+					 {"name":"Business Glossary",
 					  "evaluation": [{"tier":"1",
 					  				  "questions":[{"number":"1.1",
 					  				  				"content":"Has the organization uniquely defined names and definitions for patient demographic business terms?"}]},
@@ -59,7 +59,23 @@
 					  				  			   {"number":"3.2",
 					  				  			    "content":"Does the organization conduct impact assessments and obtain governance approval prior to implementing changes to business terms?"},
 					  				  			   {"number":"3.3",
-					  				  			    "content":"Does the organization participate in industry groups, which address emerging standards and best practices for patient demographic business terms?"}]}]}]
+					  				  			    "content":"Does the organization participate in industry groups, which address emerging standards and best practices for patient demographic business terms?"}]}]},
+
+					 {"name":"Metadata Management",
+					  "evaluation": [{"tier":"1",
+					  				  "questions":[{"number":"1.1",
+					  				  				"content":"Is metadata defined, stored, and accessible?"}]},
+					  				 {"tier":"2",
+					  				  "questions":[{"number":"2.1",
+					  				  				"content":"Is a metadata management process defined and followed?"},
+					  				  			   {"number":"2.2",
+					  				  			    "content":"Are metadata categories, properties, and standards defined and followed?"},
+					  				  			   {"number":"2.3",
+					  				  			    "content":"Is metadata used to capture data interdependencies and conduct impact analysis on potential data changes?"}]},
+					  				 {"tier":"3",
+					  				  "questions":[{"number":"3.1",
+					  				  				"content":"Is the organization following a defined plan for capturing, maintaining, and governing metadata?"}]}]}				 
+				]
 	},
 
 	"data-quality": {

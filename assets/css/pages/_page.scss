@@ -99,7 +99,7 @@
 		&.selected{
 			background-image: url('../images/caret-right.png');
 			background-repeat: no-repeat;
-			//background-position: 0% center;
+			background-position: 0%;
 		}
 		&.selected a{
 			color: $text;
