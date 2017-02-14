@@ -1,0 +1,46 @@
+<div class="pure-u-1">
+	<table class="pure-table pure-table-bordered" style="width: 100%">
+		<thead>
+			<tr style="text-align: center">
+				<th>Process Area: {{ item.name }}</th>
+				<th>Official Score</th>
+				<th>Raw Score</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+			<tr style="text-align: center">
+				<td style="width: 35%">Foundational</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-foundational-official" type="text" value="0"></td>
+				<td id="{{ item.name | slugify }}-foundational-raw" style="width: 50%">0</td>
+			</tr>
+			<tr style="text-align: center">
+				<td>Building</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-building-official" type="text" value="0"></td>
+				<td>0</td>
+			</tr>
+			<tr style="text-align: center">
+				<td>Advanced</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-advanced-official" type="text" value="0"></td>
+				<td>0</td>
+			</tr>
+			<tr style="text-align: center">
+				<td>Process Area Score</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-total-score" type="text" value="0"></td>
+				<td>0</td>
+			</tr>
+
+		</tbody>
+		
+	</table>
+
+</div>
+<!-- 		<div class="pure-u-9-24" style="background-color:blue;height: 100px;">
+			Process Area
+		</div>
+		<div class="pure-u-3-24" style="background-color:green;height: 100px;">
+			Raw Score
+		</div>
+		<div class="pure-u-12-24" style="background-color:orange;height: 100px;">
+			Official Score
+		</div> -->

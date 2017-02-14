@@ -10,7 +10,7 @@ group: Worksheet
 {% assign pagesWorksheet = site.html_pages | sort: "group" %}
 
 <div class="pure-u-18-24 center-content">
-	<form action="" class="pure-form pure-form-stacked">
+	<form action="" class="pure-form pure-form-stacked" id="worksheet-form">
 
 
 		<div class="pure-g">
@@ -30,9 +30,11 @@ group: Worksheet
 					{% for item in site.data.worksheet-menu[p.slug].children %}
 				
 
-					<legend id="{{item.name | slugify}}-group">{{ item.name }}</legend>
+					<legend class="process-area-group" id="{{item.name | slugify}}-process-area">{{ item.name }}</legend>
+					
 
 					<div class="pure-g">
+						<div class="{{item.name |slugify }}-process-area">  <!--groups class removed-->
 
 						<div class="pure-u-9-24">
 							<p>Question</p>
@@ -49,16 +51,18 @@ group: Worksheet
 
 						{% for thing in item.evaluation %}
 
+
+
 							{% for question in thing.questions %}
 
-
+		
 								<div class="pure-u-9-24">
 									<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block"><span>{{ question.number }}</span> {{ question.content }}</span>
 								</div>
 
 								<div class="pure-u-3-24">
-									<label class="element-invisible" for="{{ item.name | slugify }}-attainment-{{ forloop.index }}">Attainment</label>
-									<select class="attainment-fields worksheet-fields" name="{{ item.name | slugify }}-attainment-{{ forloop.index }}" id="{{ item.name | slugify }}-attainment-{{ forloop.index }}">
+									<label class="element-invisible" for="{{ item.name | slugify }}-attainment-{{ question.number | slugify }}">Attainment</label>
+									<select data-tier="{{thing.tier}}" class="attainment-fields worksheet-fields" name="{{ item.name | slugify }}-attainment-{{ question.number | slugify }}" id="{{ item.name | slugify }}-attainment-{{ question.number | slugify }}">
 										<option value="full">Full</option>
 										<option value="partial">Partial</option>
 										<option value="none" selected="selected">None</option>
@@ -66,23 +70,29 @@ group: Worksheet
 								</div>
 
 								<div class="pure-u-6-24">
-									<label class="element-invisible" for="{{ item.name | slugify }}-evidence-{{ forloop.index }}">Evidence</label>
-									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-evidence-{{ forloop.index }}" id="{{ item.name | slugify }}-evidence-{{ forloop.index }}" rows="5" placeholder="This is where you enter evidence of attainment"></textarea>
+									<label class="element-invisible" for="{{ item.name | slugify }}-evidence-{{ question.number | slugify }}">Evidence</label>
+									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-evidence-{{ question.number | slugify }}" id="{{ item.name | slugify }}-evidence-{{ question.number | slugify }}" rows="5" placeholder="This is where you enter evidence of attainment"></textarea>
 								</div>
 
 								<div class="pure-u-6-24">
-									<label class="element-invisible" for="{{ item.name | slugify }}-notes-{{ forloop.index }}">Notes</label>
-									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-notes-{{ forloop.index }}" id="{{ item.name | slugify }}-notes-{{ forloop.index }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
+									<label class="element-invisible" for="{{ item.name | slugify }}-notes-{{ question.number | slugify }}">Notes</label>
+									<textarea class="pure-u-23-24 worksheet-fields" name="{{ item.name | slugify }}-notes-{{ question.number | slugify }}" id="{{ item.name | slugify }}-notes-{{ question.number | slugify }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
 								</div>
 
 								<div class="pure-u-1" style="height: 1px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
+
+
 
 							{% endfor %}
 
 						{% endfor %} <!-- end for -->
 
+						{% include summary.html %}
 
+						</div>
 					</div> <!-- end pure-g -->
+
+					
 
 					{% endfor %} <!-- end for -->
 
