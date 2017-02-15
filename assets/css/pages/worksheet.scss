@@ -1,0 +1,27 @@
+.process-area-block{
+	margin-bottom: 5em;
+}
+
+
+
+legend.process-area-group{
+	font-size: 1.5em;
+	border-bottom: 1px solid #07538f;
+}
+
+.table-worksheet{
+
+	tr{
+		text-align: center;
+		th{
+			color: white;
+			background-color: $blue-dark;
+		}
+	}
+}
+
+
+.table-worksheet td > input.official-score{ 
+	margin: .25em auto;
+	text-align: right;
+}

@@ -1,40 +1,42 @@
-<div class="pure-u-1">
-	<table class="pure-table pure-table-bordered" style="width: 100%">
+<div class="pure-u-1-2">
+	<table class="pure-table pure-table-bordered table-worksheet">
 		<thead>
 			<tr style="text-align: center">
-				<th>Process Area: {{ item.name }}</th>
+				<th style="width: 50%">Process Area: {{ item.name }}</th>
 				<th>Official Score</th>
-				<th>Raw Score</th>
+				<!-- <th>Raw Score</th> -->
 			</tr>
 		</thead>
 		<tbody>
 			
-			<tr style="text-align: center">
-				<td style="width: 35%">Foundational</td>
-				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-foundational-official" type="text" value="0"></td>
-				<td id="{{ item.name | slugify }}-foundational-raw" style="width: 50%">0</td>
+			<tr>
+				<td >Foundational</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input class="official-score" id="{{ item.name | slugify }}-process-area-foundational-official" type="text" value="0"></td>
+				<!-- <td id="{{ item.name | slugify }}-foundational-raw" style="width: 50%">0</td> -->
 			</tr>
-			<tr style="text-align: center">
+			<tr>
 				<td>Building</td>
-				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-building-official" type="text" value="0"></td>
-				<td>0</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input class="official-score" id="{{ item.name | slugify }}-process-area-building-official" type="text" value="0"></td>
+				<!-- <td>0</td> -->
 			</tr>
-			<tr style="text-align: center">
+			<tr>
 				<td>Advanced</td>
-				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-advanced-official" type="text" value="0"></td>
-				<td>0</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input class="official-score" id="{{ item.name | slugify }}-process-area-advanced-official" type="text" value="0"></td>
+				<!-- <td>0</td> -->
 			</tr>
-			<tr style="text-align: center">
+			<tr>
 				<td>Process Area Score</td>
-				<td class="{{ item.name | slugify }}" style="width: 15%"><input style="text-align: right;" class="official-score" id="{{ item.name | slugify }}-process-area-total-score" type="text" value="0"></td>
-				<td>0</td>
+				<td class="{{ item.name | slugify }}" style="width: 15%"><input class="official-score" id="{{ item.name | slugify }}-process-area-total-score" type="text" value="0"></td>
+				<!-- <td>0</td> -->
 			</tr>
 
 		</tbody>
 		
 	</table>
 
+
 </div>
+
 <!-- 		<div class="pure-u-9-24" style="background-color:blue;height: 100px;">
 			Process Area
 		</div>

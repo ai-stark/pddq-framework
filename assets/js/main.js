@@ -34,6 +34,7 @@ var worksheet_fields = $('.worksheet-fields');
 var official_score_fields = $('.official-score');
 
 
+//console.log(official_score_fields);
 
 
 
@@ -42,6 +43,7 @@ var official_score_fields = $('.official-score');
 
 
 $( document ).ready(function() {
+
 
 	if(localStorage.length > 0){
 		for(var index=0; index < localStorage.length; index++){
@@ -75,6 +77,10 @@ function init(){
 
 	});
 }
+
+
+
+
 
 
 
@@ -190,16 +196,29 @@ $(attainment_fields).on('change', function(){
 	}
 
 	//calculate_score($(this).data('tier'), foundational, parent_class);
-
-	if ($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "0"){
+	if ($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "1" && $('#'+parent_class+'-advanced-official').val() == "1"){
+		console.log("we are 1-1-1");
+		calculate_score("building", building, parent_class);
+		calculate_score("advanced", advanced, parent_class);
+	}else if($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "1" && $('#'+parent_class+'-advanced-official').val() == "0"){
+		console.log("we are 1-1-0");
+		calculate_score("advanced", advanced, parent_class);
+		//init();
+	}else if($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "0" && $('#'+parent_class+'-advanced-official').val() == "0"){
+		console.log("We are 1-0-0")
+		calculate_score("advanced", advanced, parent_class);
+		calculate_score("building", building, parent_class);
+	}else if ($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "0"){
+		console.log("we are 1-0");
 		$('#'+parent_class+'-advanced-official').val("0");
 		($('#'+parent_class+'-advanced-official').trigger("change"));
 		//init();
-	}else if($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "1"){
-		calculate_score("advanced", advanced, parent_class)
-		//init();
 	}else if($('#'+parent_class+'-foundational-official').val() == "0") {
-		//init();
+		console.log("we are 0");
+		$('#'+parent_class+'-building-official').val("0");
+		$('#'+parent_class+'-advanced-official').val("0");
+		//calculate_score("advanced", advanced, parent_class);
+		//calculate_score("building", building, parent_class);
 	}
 
 	//console.log($('#'+parent_class+'-foundational-raw').val());
@@ -209,7 +228,9 @@ $(attainment_fields).on('change', function(){
 	var advanced_num = parseInt($('#'+parent_class+'-advanced-official').val());
 	
 	var process_area_score = foundational_num + building_num + advanced_num;
-	console.log($('#'+parent_class+'-total-score').val(process_area_score));
+	$('#'+parent_class+'-total-score').val(process_area_score);
+	$('#'+parent_class+'-total-score').trigger("change");
+
 
 	//need to get total score on page refresh
 
@@ -232,7 +253,7 @@ function calculate_score(area, array_tier_group, parent_class){
 				pass = false;
 				break;
 			}
-			console.log(pass);
+			
 		}
 		if(pass){
 			($('#'+parent_class+'-'+ area +'-official').val("1"));

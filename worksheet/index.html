@@ -14,9 +14,11 @@ group: Worksheet
 
 
 		<div class="pure-g">
-			<a id="clear" class="pure-button pure-u-1-5" href="#">CLEAR</a>
 			<div class="pure-u-1-5"></div>
-			<a id="save" class="pure-button pure-u-1-5" href="#">SAVE</a>
+			<div class="pure-u-1-5"></div>
+			<div class="pure-u-1-5"></div>
+			<a id="clear" class="pure-button pure-u-2-5" href="#">Clear All Field Values</a>
+			
 		</div>
 
 
@@ -34,6 +36,7 @@ group: Worksheet
 					
 
 					<div class="pure-g">
+						<div class="process-area-block">
 						<div class="{{item.name |slugify }}-process-area">  <!--groups class removed-->
 
 						<div class="pure-u-9-24">
@@ -90,13 +93,14 @@ group: Worksheet
 						{% include summary.html %}
 
 						</div>
+					</div>
 					</div> <!-- end pure-g -->
 
 					
 
 					{% endfor %} <!-- end for -->
 
-					<br><br><br><br><br>
+				
 				{% endunless %}
 				{% endif %} 
 
@@ -105,7 +109,6 @@ group: Worksheet
 		</fieldset>
 	</form>
 
-	<div style="width: 100%; height: 1000px"></div>
 
 </div> <!-- end center content -->
 
