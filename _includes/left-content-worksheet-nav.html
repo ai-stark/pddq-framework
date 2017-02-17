@@ -5,7 +5,7 @@
 
 		<h2>Evaluate Your Organization</h2>
 
-		{% assign groups = site.pages %}
+		{% assign groups = site.pages | sort: "left-content-nav-order" %}
 
 
 		{% for p in groups %}
@@ -13,12 +13,12 @@
 			{% if p.slug %}
 			{% unless p.slug == "introduction" %}
 			
-					<h2 style="font-size: 1.143em;">{{site.data.worksheet-menu[p.slug].parent}}</h2>
+					<h2 class="worksheet-nav-group-title">{{site.data.worksheet-menu[p.slug].parent}}</h2>
 
-					<ul>
+					<ul class="worksheet-nav-ul">
 					{% for z in site.data.worksheet-menu[p.slug].children %}
 
-						<li class="worksheet-nav" style="font-size: 1em;"><a href="#{{z.name | slugify}}-group">{{ z.name }}</a></li>
+						<li class="worksheet-nav"><a href="#{{z.name | slugify}}-process-area">{{ z.name }}</a></li>
 
 					{% endfor %}
 					</ul>

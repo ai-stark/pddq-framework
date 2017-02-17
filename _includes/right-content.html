@@ -1,26 +1,56 @@
 <div class="pure-u-5-24 right-content">
-
 	
 
-	{% if site.data.worksheet-menu[page.slug].parent == page.title | slugify %}
+	{% if page.group != 'Introduction' %}
 
-	<p>This is a parent page</p>
+		{% if site.data.worksheet-menu[page.slug].parent != page.title | slugify %}
 
-	{% else %}
+		<h3>Practice Evaluation Questions</h3>
 
-	{% assign q = page.group | slugify %}
+		{% assign q = page.group | slugify %}
 
-		{% for child in site.data.worksheet-menu[q].children %}
+			{% for child in site.data.worksheet-menu[q].children %}
+
+				{% if child.name == (page.title | slugify) %}
+
+				
+
+					{% for question in child.evaluation %}
+
+						<div class="tier-block">	
+
+							{% case question.tier %}
+							{% when "1" %}
+								<h4>Tier {{ question.tier }}: Foundational</h4>
+							{% when "2" %}
+								<h4>Tier {{ question.tier }}: Building</h4>
+							{% when "3" %}
+								<h4>Tier {{ question.tier }}: Advanced</span></h4>
+							{% endcase %}
+						
+
+							{% for item in question.questions %}
+
+								
+								<p><span>{{ item.number }}</span> {{ item.content }}<span class="help-icon" data-featherlight="#{{ child.name | slugify }}-{{ item.number | slugify }}"></span></p> 
+
+							
+
+							{% endfor %}
+
+						</div> <!-- end block -->
 
 
-			{% if child.name == (page.title | slugify) %}
+					{% endfor %}
 
-			<p>This is a child page</p>
 
-			{% endif %}
 
-		{% endfor %}
+				{% endif %}
 
+			{% endfor %}
+
+		{% endif %}
+		
 	{% endif %}
 
 	
