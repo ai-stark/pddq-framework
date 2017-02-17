@@ -70,7 +70,7 @@
 .left-content{
 	background-color: #fff;
 	box-sizing: border-box;
-	padding: 40px 20px 20px 20px;
+	padding: 40px 10px 20px 10px;
 	h2{
 		font-family: $font-family-nav-bold;
 		font-weight: $font-bold;
@@ -165,35 +165,10 @@
 		color: #fff;
 	}
 
-/* 	p:after{
-		display: inline-block;
-		content: "";
-		width: 14px;
-		height: 14px;
-		margin-left: 5px;
-		background: url('../images/info_icon.png') no-repeat;
-		background-position: 95%;
-	} */
-
-
 }
 
 
 
-/* Test */
-
-/* @keyframes fadeIn{
-	from{ opacity:0; }
-	to{ opacity: 1; }
-}
-
-
-.fade-in{
-	opacity: 0;
-	animation: fadeIn ease-in 1;
-	animation-fill-mode: forwards;
-	animation-duration: .2s;
-} */
 
 
 span.help-icon{
