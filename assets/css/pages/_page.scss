@@ -117,14 +117,16 @@
 	h3.subheading{
 		font-size: 1.143em;
 	}
+	h3.subheading:first-child{
+		margin-top: 0px;
+	}
 	.page-definition{
 		font-family: $font-family-nav-bold;
 		font-weight: $font-bold;
 		font-size: 1.143em;
 		color: $text-light;
 		margin-top: 0px;
-	}
-	
+	}	
 }
 
 .right-content{

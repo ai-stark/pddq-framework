@@ -25,3 +25,34 @@ legend.process-area-group{
 	margin: .25em auto;
 	text-align: right;
 }
+
+
+
+.left-content .worksheet-nav-ul{
+	margin-top: 0px;
+	li{
+		padding: 1px 5px 1px 25px;
+		font-size: 1em;
+	}
+}
+
+.left-content .worksheet-nav-group-title{
+	margin-bottom: .4em;
+	font-size: 1.143em;
+}
+
+.score-badge{
+    display: inline-block;
+    min-width: 20px;
+    padding: 4px 7px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: $blue-dark;
+    border-radius: 10px;
+    float: right;
+}

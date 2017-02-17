@@ -9,16 +9,16 @@ group: Worksheet
 
 {% assign pagesWorksheet = site.html_pages | sort: "group" %}
 
-<div class="pure-u-18-24 center-content">
+<div class="pure-u-18-24 center-content has-fixed-menu">
 	<form action="" class="pure-form pure-form-stacked" id="worksheet-form">
 
 
 		<div class="pure-g">
-			<div class="pure-u-1-5"></div>
-			<div class="pure-u-1-5"></div>
-			<div class="pure-u-1-5"></div>
-			<a id="clear" class="pure-button pure-u-2-5" href="#">Clear All Field Values</a>
-			
+				<div class="pure-u-1-4"></div>
+				<div class="pure-u-1-8"></div>
+				<a id="sumarize" class="pure-button pure-u-lg-1-4" href="{{site.baseurl}}/worksheet/score-summary">View Summary</a>
+				<div class="pure-u-1-8"></div>
+				<a id="clear" class="pure-button pure-u-lg-1-4" href="#">Clear All Field Values</a>
 		</div>
 
 

@@ -7,23 +7,41 @@ $('.worksheet-nav').on("click", function(event){
 	}
 });
 
+/*var process_area_totals = $('.official-score-total');
+for(var index=0; index < process_area_totals.length; index++){
+	//console.log(process_area_totals[index].id);
+	$('#'+process_area_totals[index].id+"-summary").text("1");
+	console.log(localStorage.getItem(process_area_totals[index].id));
+}*/
+
+
+
+
 
 // Creates a fixed menu when scrolling down on the worksheet page
-var $window = $(window),
-	$stickyMenu = $('#sticky-menu');
-	menuToTop = $stickyMenu.offset().top;
-
-$window.scroll(function(){
-	$stickyMenu.toggleClass('sticky', $window.scrollTop() > menuToTop);
-});
-
 $(function(){
-	leftContentWidth = $('.left-content').css('width');
-	$('#sticky-menu').css('width', leftContentWidth);
+	if($('.has-fixed-menu').length > 0){
+
+		var $window = $(window);
+		var	$stickyMenu = $('#sticky-menu');
+		var	menuToTop = $stickyMenu.offset().top;
+
+		$window.scroll(function(){
+			$stickyMenu.toggleClass('sticky', $window.scrollTop() > menuToTop);
+		});
+
+		var leftContentWidth = $('.left-content').css('width');
+		$('#sticky-menu').css('width', leftContentWidth);
+
+	}
 });
 
 
 
+
+//console.log(process_area_totals);
+
+//console.log($('#dg-gm').text('0'));
 
 
 
@@ -33,9 +51,11 @@ var worksheet_fields = $('.worksheet-fields');
 
 var official_score_fields = $('.official-score');
 
-
 //console.log(official_score_fields);
-
+var official_score_total = $('.official-score-total');
+for(var i=0; i<official_score_total.length; i++){
+	console.log(official_score_total[i].id);
+}
 
 
 
@@ -49,12 +69,41 @@ $( document ).ready(function() {
 		for(var index=0; index < localStorage.length; index++){
 			$('#' + localStorage.key(index)).val(localStorage.getItem(localStorage.key(index)));
 
+			if(localStorage.key(index).match(/score$/)){
+				$('#'+localStorage.key(index)+"-summary").text(localStorage.getItem(localStorage.key(index)));
+				console.log(localStorage.getItem(localStorage.key(index)));
+			}
 
 			//console.log(localStorage.key(index));
 		}
 	}
 });
 
+
+
+/*
+var query_str = "^"
+var results = findLocalItems('');
+ console.log(results);
+
+// returns an array of localStorage items in key/value pairs based on a query parameter
+// returns all localStorage items if query isn't specified
+// query can be a string or a RegExp object
+
+function findLocalItems (query) {
+  var i, results = [];
+  for (i in localStorage) {
+    if (localStorage.hasOwnProperty(i)) {
+      if (i.match(query) || (!query && typeof i === 'string')) {
+        value = JSON.parse(localStorage.getItem(i));
+        results.push({key:i,val:value});
+      }
+    }
+  }
+
+  return results;
+}
+*/
 
 
 
@@ -81,63 +130,8 @@ function init(){
 
 
 
-
-
-
-/*$('.calc').on('click', function(e){
+$('#clear').on("click", function(e){
 	e.preventDefault();
-	var foundational = [];
-	var building = [];
-	var advanced = [];
-
-	var attainGroups = ($("."+$(this).data("store")+"-process-area select"));
-
-	for(index=0; index<attainGroups.length; index++){
-		if($(attainGroups[index]).data('tier') == "1"){
-			foundational.push((attainGroups[index]));
-		}else if($(attainGroups[index]).data('tier') == "2"){
-			building.push((attainGroups[index]));
-		}else{
-			advanced.push((attainGroups[index]));
-		}	
-	}
-
-
-
-
-	console.log(foundational);
-	console.log(building);
-	console.log(advanced);
-	
-
-	//console.log($(this).data("store"));
-
-});*/
-
-
-
-/*$(evidence_fields).on('change', function(){
-
-	localStorage.setItem((this).id, ($(this).val()));
-
-});
-
-
-$(notes_fields).on('change', function(){
-
-	localStorage.setItem((this).id, ($(this).val()));
-
-});*/
-
-
-
-
-
-//console.log(evidence_fields);
-//console.log(evidence_fields.length);
-
-
-$('#clear').on("click", function(){
 	localStorage.clear();
 	location.reload();
 });
@@ -217,8 +211,6 @@ $(attainment_fields).on('change', function(){
 		console.log("we are 0");
 		$('#'+parent_class+'-building-official').val("0");
 		$('#'+parent_class+'-advanced-official').val("0");
-		//calculate_score("advanced", advanced, parent_class);
-		//calculate_score("building", building, parent_class);
 	}
 
 	//console.log($('#'+parent_class+'-foundational-raw').val());
