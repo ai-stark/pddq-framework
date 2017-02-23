@@ -52,10 +52,10 @@ var worksheet_fields = $('.worksheet-fields');
 var official_score_fields = $('.official-score');
 
 //console.log(official_score_fields);
-var official_score_total = $('.official-score-total');
+/*var official_score_total = $('.official-score-total');
 for(var i=0; i<official_score_total.length; i++){
 	console.log(official_score_total[i].id);
-}
+}*/
 
 
 
@@ -71,7 +71,7 @@ $( document ).ready(function() {
 
 			if(localStorage.key(index).match(/score$/)){
 				$('#'+localStorage.key(index)+"-summary").text(localStorage.getItem(localStorage.key(index)));
-				console.log(localStorage.getItem(localStorage.key(index)));
+				//console.log(localStorage.getItem(localStorage.key(index)));
 			}
 
 			//console.log(localStorage.key(index));
@@ -191,24 +191,24 @@ $(attainment_fields).on('change', function(){
 
 	//calculate_score($(this).data('tier'), foundational, parent_class);
 	if ($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "1" && $('#'+parent_class+'-advanced-official').val() == "1"){
-		console.log("we are 1-1-1");
+		//console.log("we are 1-1-1");
 		calculate_score("building", building, parent_class);
 		calculate_score("advanced", advanced, parent_class);
 	}else if($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "1" && $('#'+parent_class+'-advanced-official').val() == "0"){
-		console.log("we are 1-1-0");
+		//console.log("we are 1-1-0");
 		calculate_score("advanced", advanced, parent_class);
 		//init();
 	}else if($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "0" && $('#'+parent_class+'-advanced-official').val() == "0"){
-		console.log("We are 1-0-0")
+		//console.log("We are 1-0-0")
 		calculate_score("advanced", advanced, parent_class);
 		calculate_score("building", building, parent_class);
 	}else if ($('#'+parent_class+'-foundational-official').val() == "1" && $('#'+parent_class+'-building-official').val() == "0"){
-		console.log("we are 1-0");
+		//console.log("we are 1-0");
 		$('#'+parent_class+'-advanced-official').val("0");
 		($('#'+parent_class+'-advanced-official').trigger("change"));
 		//init();
 	}else if($('#'+parent_class+'-foundational-official').val() == "0") {
-		console.log("we are 0");
+		//console.log("we are 0");
 		$('#'+parent_class+'-building-official').val("0");
 		$('#'+parent_class+'-advanced-official').val("0");
 	}
@@ -235,6 +235,9 @@ $(attainment_fields).on('change', function(){
 function calculate_score(area, array_tier_group, parent_class){
 
 		var weight = (100 / array_tier_group.length);
+
+		console.log(array_tier_group);
+		console.log("Weight " + weight);
 
 		var pass = false;
 

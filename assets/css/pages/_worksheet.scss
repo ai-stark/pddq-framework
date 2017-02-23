@@ -60,3 +60,26 @@ legend.process-area-group{
 .even{
 	background-color: #eee;
 }
+
+.pure-table thead{
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.print-button{
+	text-decoration: none;
+	border: 1px solid #cbcbcb;
+	border-radius: .5em;
+	display: block;
+	padding: 1em 2em 1em 2em;
+	text-align: center;
+	background-color: $blue-dark;
+	color: white;
+	transition: all .3s;
+}
+
+.print-button:hover{
+	background-color: #b7d4fa;
+	color: #000;
+	text-decoration: none;
+	transition: all .3s;
+}
