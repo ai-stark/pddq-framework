@@ -5,7 +5,7 @@
 
 		{% if site.data.worksheet-menu[page.slug].parent != page.title | slugify %}
 
-		<h3>Practice Evaluation Questions</h3>
+		<h3 tabindex="0">Practice Evaluation Questions</h3>
 
 		{% assign q = page.group | slugify %}
 
@@ -32,7 +32,7 @@
 							{% for item in question.questions %}
 
 								
-								<p><span>{{ item.number }}</span> {{ item.content }}<span class="help-icon" data-featherlight="#{{ child.name | slugify }}-{{ item.number | slugify }}"></span></p> 
+								<p><span>{{ item.number }}</span> {{ item.content }}<button class="help-icon" data-featherlight="#{{ child.name | slugify }}-{{ item.number | slugify }}"></button></p> 
 
 							
 
