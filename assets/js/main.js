@@ -7,16 +7,6 @@ $('.worksheet-nav').on("click", function(event){
 	}
 });
 
-/*var process_area_totals = $('.official-score-total');
-for(var index=0; index < process_area_totals.length; index++){
-	//console.log(process_area_totals[index].id);
-	$('#'+process_area_totals[index].id+"-summary").text("1");
-	console.log(localStorage.getItem(process_area_totals[index].id));
-}*/
-
-
-
-
 
 // Creates a fixed menu when scrolling down on the worksheet page
 $(function(){
@@ -37,33 +27,13 @@ $(function(){
 });
 
 
-
-
-//console.log(process_area_totals);
-
-//console.log($('#dg-gm').text('0'));
-
-
-
 var attainment_fields = $('.attainment-fields');
-//var evidence_fields = $('.evidence-fields');
+
 var worksheet_fields = $('.worksheet-fields');
 
 var official_score_fields = $('.official-score');
 
 var text_fields = $('.text-fields');
-
-
-
-//console.log(official_score_fields);
-/*var official_score_total = $('.official-score-total');
-for(var i=0; i<official_score_total.length; i++){
-	console.log(official_score_total[i].id);
-}*/
-
-
-
-//var numOfFields = $('.attainment-fields').length
 
 
 $( document ).ready(function() {
@@ -75,39 +45,10 @@ $( document ).ready(function() {
 
 			if(localStorage.key(index).match(/score$/)){
 				$('#'+localStorage.key(index)+"-summary").text(localStorage.getItem(localStorage.key(index)));
-				//console.log(localStorage.getItem(localStorage.key(index)));
 			}
-
-			//console.log(localStorage.key(index));
 		}
 	}
 });
-
-
-
-/*
-var query_str = "^"
-var results = findLocalItems('');
- console.log(results);
-
-// returns an array of localStorage items in key/value pairs based on a query parameter
-// returns all localStorage items if query isn't specified
-// query can be a string or a RegExp object
-
-function findLocalItems (query) {
-  var i, results = [];
-  for (i in localStorage) {
-    if (localStorage.hasOwnProperty(i)) {
-      if (i.match(query) || (!query && typeof i === 'string')) {
-        value = JSON.parse(localStorage.getItem(i));
-        results.push({key:i,val:value});
-      }
-    }
-  }
-
-  return results;
-}
-*/
 
 
 
@@ -134,48 +75,11 @@ $(official_score_fields).on('change', function(){
 
 
 
-
-
-/*function init(){
-	$(worksheet_fields).on('change', function(){
-
-		localStorage.setItem((this).id, ($(this).val()));
-
-	});
-}*/
-
-
-
-
 $('#clear').on("click", function(e){
 	e.preventDefault();
 	localStorage.clear();
 	location.reload();
 });
-
-
-
-//var g = $('.groups');
-//
-//var g1 = $('.governance-management-process-area select');
-//for(var index=0; index < g.length; index++){
-	//console.log($(g1[index]).data('tier'));
-	//console.log(g[index]);
-//}
-
-/*for(var index=0; index < attainment_fields.length; index++){
-
-	console.log(attainment_fields[index]);
-}*/
-
-/*var processAreaGroups = $('.process-area-group');
-
-for (var outside=0; outside < processAreaGroups.length; outside++){
-	//console.log(processAreaGroups[outside].id);
-}
-*/
-
-
 
 
 $(attainment_fields).on('change', function(){
@@ -207,101 +111,39 @@ $(attainment_fields).on('change', function(){
 
 
 	if ($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "100%" && $('#'+parent_class+'-advanced-official').val() == "100%"){
-		console.log("we are 1-1-1");
 		calculate_official_score("building", building, parent_class);
 		calculate_official_score("advanced", advanced, parent_class);
 	}else if ($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() != "100%"){
-		console.log("we are 1-0-1");
-		//$('#'+parent_class+'-building-official').val("0%");
-		//($('#'+parent_class+'-building-official').trigger("change"));
 		calculate_official_score("advanced", advanced, parent_class);
-		//$('#'+parent_class+'-advanced-official').val("0%");
-		//($('#'+parent_class+'-advanced-official').trigger("change"));
 	}else if ($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "100%"){
-		console.log("we are 1-1");
 		calculate_official_score("advanced", advanced, parent_class);
 	}
-
 	else if($('#'+parent_class+'-foundational-official').val() == "0%") {
-		console.log("we are 0");
-		//$('#'+parent_class+'-building-official').val("0%");
-		//$('#'+parent_class+'-advanced-official').val("0%");
 	}
 
-
-
-
-/*
-	//calculate_score($(this).data('tier'), foundational, parent_class);
-	if ($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "100%" && $('#'+parent_class+'-advanced-official').val() == "100%"){
-		console.log("we are 1-1-1");
-		calculate_official_score("building", building, parent_class);
-		calculate_official_score("advanced", advanced, parent_class);
-	}else if($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "100%" && $('#'+parent_class+'-advanced-official').val() == "0%"){
-		console.log("we are 1-1-0");
-		calculate_official_score("advanced", advanced, parent_class);
-		//init();
-	}else if($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "0%" && $('#'+parent_class+'-advanced-official').val() == "0%"){
-		console.log("We are 1-0-0")
-		calculate_official_score("advanced", advanced, parent_class);
-		calculate_official_score("building", building, parent_class);
-	}else if ($('#'+parent_class+'-foundational-official').val() == "100%" && $('#'+parent_class+'-building-official').val() == "0%"){
-		console.log("we are 1-0");
-		$('#'+parent_class+'-advanced-official').val("0%");
-		($('#'+parent_class+'-advanced-official').trigger("change"));
-		//init();
-	}else if($('#'+parent_class+'-foundational-official').val() == "0%") {
-		console.log("we are 0");
-		$('#'+parent_class+'-building-official').val("0%");
-		$('#'+parent_class+'-advanced-official').val("0%");
-	}
-
-*/
-
-	//console.log($('#'+parent_class+'-foundational-raw').val());
 
 	var foundational_num = parseInt($('#'+parent_class+'-foundational-official').val());
 	var building_num = parseInt($('#'+parent_class+'-building-official').val());
 	var advanced_num = parseInt($('#'+parent_class+'-advanced-official').val());
 	var process_area_score = 0;
 
-	console.log(foundational_num);
-	console.log(building_num);
-	console.log(advanced_num);
-
-
 	if(foundational_num != 100){
-		console.log("1");
 		$('#'+parent_class+'-total-score').val('0%');
 		$('#'+parent_class+'-total-score').trigger("change");
 	}else if(foundational_num > 0 && building_num == 0){
-		console.log("2");
 		process_area_score = foundational_num;
 		$('#'+parent_class+'-total-score').val(process_area_score/100);
 		$('#'+parent_class+'-total-score').trigger("change");		
 	}else if(foundational_num == 100 && building_num < 100){
-		console.log("3");
 		process_area_score = foundational_num + building_num;
 		$('#'+parent_class+'-total-score').val(process_area_score/100);
 		$('#'+parent_class+'-total-score').trigger("change");		
 	}else{
-		console.log("4");
 		process_area_score = foundational_num + building_num + advanced_num;
 		$('#'+parent_class+'-total-score').val(process_area_score/100);
 		$('#'+parent_class+'-total-score').trigger("change");		
 	}
 
-	
-	//var process_area_score = foundational_num + building_num + advanced_num;
-	//$('#'+parent_class+'-total-score').val(process_area_score/100);
-	//$('#'+parent_class+'-total-score').trigger("change");
-
-
-	//need to get total score on page refresh
-
-	
-	//console.log($(this).parent().parent());
-	//console.log($(this).parent().parent());
 });
 
 
@@ -335,51 +177,3 @@ function calculate_official_score(area, array_tier_group, parent_class){
 
 }
 	
-	
-
-/*	if(tier_num == "1"){
-		var weight = (100 / array_tier_group.length);
-		var pass = false;
-		for(var i=0; i<array_tier_group.length; i++){
-			if(array_tier_group[i].value == "full"){
-				pass = true;
-			}else{
-				pass = false;
-			}
-		}
-		if(pass){
-			($('#'+parent_class+'-foundational-raw').val("1"));
-			($('#'+parent_class+'-foundational-raw').trigger("change"));
-		}else{
-			($('#'+parent_class+'-foundational-raw').val("0"));
-			($('#'+parent_class+'-foundational-raw').trigger("change"));
-		}
-	}*/
-
-
-
-
-
-
-
-
-
-
-//var value = parseInt($('#governance-management-foundational-raw').text());
-//value = value + 1;
-//$('#governance-management-foundational-raw').text(value);
-//console.log(typeof(value));
-
-
-
-
-/***********************************
-		TIER HELP BUTTONS
-	RIGHT CONTENT INCLUDE FILE
-************************************/
-
-// $('.tier-help-group').on('click', function(){
-// 	$(this).css('display', 'block');
-// });
-
-
