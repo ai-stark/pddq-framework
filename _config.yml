@@ -1,4 +1,4 @@
-baseurl: /pddq_framework
+baseurl: /pddq-framework
 
 sass:
  sass_dir: assets/css

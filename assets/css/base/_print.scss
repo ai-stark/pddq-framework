@@ -1,0 +1,28 @@
+@media print {
+	.left-content{
+		display: none;
+	}
+
+	.right-content{
+		display: none;
+	}
+
+	.center-content{
+		width: 100%;
+		min-height: 0px;
+	}
+
+	.nav-band{
+		display: none;
+	}
+
+	.id-wrap{
+		display: none;
+	}
+
+	.pure-table thead.thead{
+		border-bottom: 1px solid #cbcbcb;
+	}
+
+
+}

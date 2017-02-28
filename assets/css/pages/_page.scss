@@ -113,7 +113,7 @@
 	padding: 40px 20px 20px 0px;
 	background-color: #fff;
 	box-sizing: border-box;
-	min-height: 1000px;
+	min-height: 900px;
 	h3.subheading{
 		font-size: 1.143em;
 	}
@@ -171,14 +171,14 @@
 
 
 
-span.help-icon{
+button.help-icon{
 		display: inline-block;
 		content: "";
-		width: 14px;
-		height: 14px;
+		width: 20px;
+		height: 20px;
 		margin-left: 5px;
-		background: url('../images/info_icon.png') no-repeat;
-		background-position: 95%;
+		background: url('../images/info_icon.png') no-repeat center;
+		
 	}
 
 

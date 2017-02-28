@@ -12,11 +12,12 @@ slug: score-summary
 <div class="pure-u-14-24 center-content">
 
 	<table width="100%" class="pure-table pure-table-bordered">
-		<thead>
+		<thead class="thead">
 			<tr>
 				<th style="text-align: center; padding-top: 1em; padding-bottom: 1em; font-size: 18px;">Category</th>
 				<th style="text-align: center; padding-top: 1em; padding-bottom: 1em; font-size: 18px;">Process Area Score</th>
 			</tr>
+
 		</thead>
 		<tbody>
 			<tr>
@@ -77,5 +78,11 @@ slug: score-summary
 </div>
 
 <div class="pure-u-5-24 right-content">
+	<script>
+		document.write("<a href='javascript:window.print()' class='print-button'><span>Print This Page</span></a>");
+	</script>
+
+	{% include evaluate.html %}
+	
 	
 </div>
