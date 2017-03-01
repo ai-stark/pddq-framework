@@ -120,6 +120,17 @@
 	h3.subheading:first-child{
 		margin-top: 0px;
 	}
+	a{
+		font-size: 1.143em;
+		font-weight: $font-bold;
+		color: $text-light;
+		&:visited{
+			
+		}
+		&:hover{
+			color: $blue-dark;
+		}
+	}
 	.page-definition{
 		font-family: $font-family-nav-bold;
 		font-weight: $font-bold;
@@ -167,10 +178,6 @@
 
 }
 
-
-
-
-
 button.help-icon{
 		display: inline-block;
 		content: "";
@@ -180,7 +187,6 @@ button.help-icon{
 		background: url('../images/info_icon.png') no-repeat center;
 		
 	}
-
 
 .tier-help-group{
 	display: none;
