@@ -128,7 +128,7 @@ $(attainment_fields).on('change', function(){
 	var process_area_score = 0;
 
 	if(foundational_num != 100){
-		$('#'+parent_class+'-total-score').val('0%');
+		$('#'+parent_class+'-total-score').val('0');
 		$('#'+parent_class+'-total-score').trigger("change");
 	}else if(foundational_num > 0 && building_num == 0){
 		process_area_score = foundational_num;
