@@ -15,28 +15,64 @@ left-content-nav-order: 3
 	
 	<h4>Purpose</h4>
 
-	<p>Provides data management resources to ensure that patient demographic data is managed effectively as a organizational asset, providing oversight and support to establish and maintain data management best practices, facilitate adoption, and ensure utilization.</p>
+	<p>Provides a systematic, business-driven approach to measure and evaluate data quality employing data quality dimensions, to ensure fitness for purpose and establish targets and thresholds for quality.</p>
 
 	<h4>Introductory Notes</h4>
 
-	<p>The data management function is a core set of business processes, such as Finance, Human Resources, or Facilities Management, that provides resources to facilitate the establishment and adoption of best practices across data management disciplines, and which will always be needed across the full lifecycle of patient demographic data.</p>
+	<p>The business owns the data it creates and manages.  No organization’s information technology staff can single-handedly improve the quality of its data.  Business representatives across the patient demographic lifecycle must be engaged to: determine patient demographic data’s fitness for purpose across the lifecycle; define the level of quality desired; and define the level of quality acceptable.</p>
 
-	<p>The scope of the data management role will vary according to the size of the organization and its span of control over patient demographic data assets. For a small organization, the role may be fulfilled by one person, part-time; for larger organizations with a greater span of control over the data, a multi-person organization may be required. However, the essential concept is to assign accountability for persistent work products that the organization builds and maintains over time. Examples of these work products include data management policy and process documentation and quality rules that are developed to improve the quality of patient demographic data.</p>
-
-	<p>The plan for data management resources should be based on the organization’s goals (e.g., to improve patient care and safety), objectives (e.g., eliminating duplicate patient records), and priorities.  For example, an important task would be to create quality rules to address defects discovered in a central data store receiving patient demographic data from multiple sources.</p>
-
-	<p>The goals of recognizing a distinct data management function are to: institute responsibilities, authorities, and accountability over key data management assets; help ensure the adoption of consistent policies, processes, and standards; and align with data governance on data management priorities and decisions.  The benefits of implementing a recognized data management role include:</p>
+	<p>The data quality assessment processes consist of making decisions about the data and acting on those decisions. Only those who create, modify, and delete patient demographic data, across every phase of its lifecycle, can decide:</p>
 
 	<ul>
-		<li>Raising data awareness across the organization;</li>
-		<li>Facilitating implementation of best practices, in collaboration with governance representatives;</li>
-		<li>Reducing duplicative efforts by promoting best practices; and</li>
-		<li>Fostering adoption of data-related processes, standards, and guidelines.</li>
+		<li>If the data set is sufficiently complete and accurate to support business process needs (i.e., “fit for purpose”);</li>
+		<li>What is the desired state of specific attributes (i.e., “targets”);</li>
+		<li>What is the minimum level of quality acceptable (i.e., “thresholds”);</li>
+		<li>What are the best measures and metrics to track improvements.</li>
 	</ul>
 
-	<p>In most organizations, the data management function has typically originated within IT and was closely linked to the design and implementation of data stores. As organizations have moved toward appreciating the criticality and value of their data assets, the data management function has become more of a business function. The data management role is increasingly becoming a business-centric leadership role for implementing data management capabilities and conducting compliance actitivities. For example, the data management function maintains the continutity of governance activities, such as the creation and maintenance of the organization’s business glossary and metadata.</p>
+	<p>To take an example of fitness for purpose, an organization may discover, based on data profiling results, that it does not capture a sufficient set of attributes to maximize the efficacy of its record matching algorithm.  The data set is not fit for purpose because it is incomplete with respect to the business objective of preventing and reconciling duplicates. Business representatives would need to consider which attributes are most useful to add to constitute the minimum set that is required, for instance, mother’s maiden name, previous address, previous phone number, etc.</p>
 
-	<p>The success of data management depends on business ownership of its goals and objectives. The lines of accountability and responsibility for data management activities are typically communicated in an organizational chart, an interaction diagram, and often using a Responsible, Accountable, Consulted, Informed (RACI) matrix.  In a larger organization, it may be useful to document the mission, objectives, and responsibilities of the data management function in the form of a charter. However, even in a very small organization, it is advised to consider recognition and assignment of this role.</p>
+	<p>An example of targets might be: 100% population of all attributes (each specified) needed for matching. An example of a threshold might be: 95% of first names must contain more than one character (the rationale here might be that later in the patient lifecycle this could be modified).  An example of a metric might be: the baseline profiling effort revealed that 10% of the street addresses did not have a street suffix (RD, ST, BLVD, etc.).  This metric, percentage of records without street suffixes, could be monitored to assess improvement as data profiling monitoring and data cleansing activities were conducted over time.</p>
+
+	<p>The most effective mechanism to assist the business in assessing data quality and establishing useful targets, thresholds, and metrics is the consideration and application of data quality dimensions to each attribute. A “dimension” is a criterion against which data quality is measured. A number of different dimensions of quality can be measured. A sample set often used is presented below:</p>
+
+	<ul>
+		<li>Accessibility – the data is available when needed;</li>
+		<li>Accuracy – affinity with original intent, veracity as compared to an authoritative source, correlation of data elements (e.g., an insurance card and a driver’s license), and measurement precision (e.g., a patient’s last name is correctly spelled);</li>
+		<li>Completeness – availability of required data attributes (e.g., a ZIP code is missing);</li>
+		<li>Coverage – availability of required data records (e.g., some returning patient’s records are missing);</li>
+		<li>Conformity – alignment of content with required standards (e.g. birth date formatted as MMDDYYYY);</li>
+		<li>Consistency – compliance with required patterns and uniformity rules (e.g., “Street” must be abbreviated to “ST”), supported by data entry standards, workflow management, and technical design standards;</li>
+		<li>Integrity – accuracy of data relationships (parent and child linkage, e.g., patient is correctly represented as the mother of another patient);</li>
+		<li>Timeliness – the currency of content (e.g., the patient’s name change is recorded as soon as it is known, and automatically updated across all relevant data stores); and</li>
+		<li>Uniqueness – each record can be unambiguously identified (e.g., patient lookup and other reports provide a unique ID, versus Last Name, First Name, and Date of Birth) – uniqueness also includes checks for redundancy of records (e.g., duplicate patient records).</li>
+	</ul>
+
+	<p>Performing a data quality assessment is based on the predefined quality expectations and criteria set by stakeholders and approved by governance.  It is advisable to start by measuring data quality for a small set of key attributes supporting one or more primary business processes, i.e., patient demographic data. Profiling the data is the recommended first step. For each attribute identified, the organization should convene a working group (e.g., data stewards) representing all relevant stakeholders to determine targets, set thresholds, and define the quality dimensions that are most important.</p>
+
+	<p>Once the criteria are determined and the data evaluated, metrics can be developed and published in a scorecard or dashboard format. Assessment results facilitate root cause analysis and are key inputs into the organization's data quality improvement plans. Periodic assessments should be conducted to determine if acceptable thresholds and targets are being met, and metrics should be updated accordingly.</p> 
+
+	<p>To support these efforts and track improvements over time, it is helpful to conduct an impact analysis of the overall data quality effort, as well as specific impacts of improvements regarding individual data elements, as part of the assessment process. Categorizing impacts of poor data quality, such as cost, risk, compliance, productivity, etc. also assists in prioritizing data cleansing and quality improvement plans.</p> 
+
+	<p>Effective goverance is important to implementing this process (See Data Governance).  Assignment of specific responsibilities and data ownership deepens business engagement, which is important because improving data quality is truly a team effort. For example, an organization may decide that the Billing department should own ZIP code because it is critical for mailing patient bills; whereas, it is not critical for clinical care delivery. Under the supervision of the data quality coordinator, if ZIP codes were found to be missing or inaccurate, Billing would initiate root cause analysis and sponsor the resulting improvements for remediation and defect prevention.</p>
+
+	<p>The data quality assessment process and accompanying mechanisms and metrics provide the following benefits:</p>
+
+	<ul>
+		<li>Anchors responsibility in the departments for the quality of their data;</li>
+		<li>Results in tangible improvements for each line of business;</li>
+		<li>Deepens stakeholder knowledge of the data and refines quality rules;</li>
+		<li>Creates a “quality culture” via a collaborative effort sustained over time;</li>
+		<li>Proves that the organization’s data assets are becoming more trustworthy;</li>
+		<li>Supports realistic cost estimates and better planning with an impact analysis; and</li>
+		<li>Published data quality metrics:
+			<ul>
+				<li>Inform internal and external consumers;</li>
+				<li>Improve population health analytics, quality reporting, and other reporting such as Meaningful Use; and</li>
+				<li>Foster interoperability.</li>
+			</ul>
+		</li>
+	</ul>
 
 	<div class="featherlight-group">
 

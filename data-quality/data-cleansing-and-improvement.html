@@ -15,37 +15,29 @@ left-content-nav-order: 4
 	
 	<h4>Purpose</h4>
 
-	<p>Business glossary practices ensure collaborative agreements on business terms and definitions, creating common understanding about patient demographic data that supports business processes for all relevant stakeholders.</p>
+	<p>Addresses the mechanisms, processes, and methods used to validate and correct data defects according to predefined quality rules, as well as analysis and enhancement of business processes to prevent errors.</p>
 
 	<h4>Introductory Notes</h4>
 
-	<p>A business glossary is a compendium of business terms and definitions, which have been approved by stakeholders and are maintained and governed. The language representing the data should be aligned with the language of the business.</p>
+	<p>Data cleansing focuses on data correction to meet business user criteria (targets and thresholds) as determined by data quality rules addressing all applicable quality dimensions. Quality rules, developed through the data quality assessment process and the results of data profiling efforts, provide a baseline for identifying data defects which can affect business operations.</p>
 
-	<p>Consistent terms and definitions, with corresponding metadata, are essential to managing patient demographic data across its lifecycle in the context of meaning. Agreement about term names and definitions is essential to ensure that all stakeholders who supply or consume the data understand it the same way without ambiguity. If common understanding of terms for shared data is lacking, business processes are negatively affected.</p>
+	<p>An example of enhancing a business process to improve patient demographic data quality might be, for example: once a patient has produced identification, if there is an existing record in the system, providing the patient a subset of the demographic information for validation. Adding this activity step would help prevent potential duplications.</p>
 
-	<p>The business glossary represents agreement among key stakeholders on the language and associated meaning pertaining to patient data needed to support quality care, efficient payments, and patient safety. If business terminology is not uniquely named and defined, confusion and inefficiencies may cause issues.</p>
+	<p>Data cleansing activities are most effective when conducted at, or as close as possible to, the point of first capture, i.e. the first automated data store to record the patient’s data, or as close to the original creation point as feasible. A best practice is to undertake cleansing activites based on data profiling or data quality assessment analysis. The organization should develop a standard data cleansing plan template to ensure that cleansing rules for data are shared and reused for any data store in which patient demographic data is located. This will help to minimize duplication of effort and conflicting cleansing activities, e.g. cleaning the same data in two physical locations but applying different rules.</p>
 
-	<p>The benefits of building and maintaining a glossary of standard patient demographic business terms include:</p>
+	<p>Organizations need to establish criteria for what events trigger data cleansing efforts. In most organizations, data cleansing is more frequently conducted on key shared data stores, such as a master patient index or the patient registration or scheduling system. However, it is advisable to expand the scope to operational systems which provide data to other internal or external consumers, subject to criticality and budget. As with data profiling efforts, it is recommended that data cleansing criteria are subject to impact analysis.</p> 
+
+	<p>Once accomplished, data corrections should be published and immediately made available for affected downstream data stores and repositories. It is advised to develop and document a consistent process for escalating issues approporiately to governance, the quality coordinator, or the vendor if applicable. Data changes should be verified with internal and external data providers, preferably through an automated message or report. If this capability does not exist, then a manual report should be produced, and provided both to the designated data quality resource and any corresponding internal or external stakeholders.</p>
+
+	<p>The benefits of implementing standard data cleansing and improvement processes include:</p>
 
 	<ul>
-		<li>Increased understanding and communication among business units and stakeholders;</li>
-		<li>Improved foundation for developing data requirements for new data stores;</li>
-		<li>Improved accuracy and clarity of reports;</li>
-		<li>Improved agility for effective sharing and integration of patient data;</li>
-		<li>Enabled tracing of data lineage from receipt or acquisition through its movement across business processes and data stores;</li>
-		<li>Enhanced agility in exchanging data with external suppliers or consumers; and</li>
-		<li>Increased collaborative effort and positive achievement for governance participants.</li>
+		<li>Realized savings in both effort and cost;</li>
+		<li>Errors traced to root causes to prevent downstream errors;</li>
+		<li>Increased resource allocation efficiency through cumulative experience;</li>
+		<li>Improved and sustainable data quality through discovery of quality rules; and</li>
+		<li>Improved effectiveness of business processes to minimize errors.</li>
 	</ul>
-
-	<p>Standardizing business terms is the starting point for standardizing metadata (formats, values, ranges, lengths) and any physical specifications that are required to optimize patient identification and matching. Building knowledge (metadata) about patient demographic data is the baseline for making decisions about modifying or adding to the set of core demographic data elements. Standard business terms should be easily accessible to all stakeholders.</p>
-
-	<p>Business terms relevant to patient demographic data may be: adopted from a glossary included with vendor services or software, adopted (or adapted) from an existing set of industry standard terms, or created by the organization itself. What is important is that the organization creates, approves, and updates consistent business terms and definitions, fostering a shared understanding and usage across the data lifecycle. Each term in the glossary should refer to an atomic concept without ambiguity or duplication.</p>
-
-	<p>Business terms can be challenging to define, reconcile, approve, and maintain. Usage of terms within a single business unit may support its needs, but vary from the usage in other groups. In addition, terms may have connotative meanings that must be explored, harmonized, and decided upon through collaborative agreements.</p>
-
-	<p>In many organizations, development of data stores takes place in the context of an information systems project, and without applying consistent business terms, there is a risk of creating new names and alternate definitions that may complicate future data integration and incur rework. Standard business terms are the underpinning for trend and predictive analyses, semantic modeling, taxonomies, and ontologies.</p>
-
-	<p>An organization is advised to create a defined process by which business terms and their corresponding definitions are created, approved, updated, maintained, and governed. Standards for business terms, including naming conventions, abbreviations, standard definitions, and standard metadata (for example, date created, data owner, etc.) should accompany the process.</p>
 
 
 	<div class="featherlight-group">

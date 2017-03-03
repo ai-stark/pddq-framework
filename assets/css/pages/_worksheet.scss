@@ -1,8 +1,36 @@
+#worksheet-form > .worksheet-button-bank{
+	overflow: auto;
+	width: 100%;
+	#summarize{
+		float: right;
+		clear: left;
+		margin-left: 1em;
+		width: 20em;
+		padding: 1em 1.5em;
+	}
+	#clear{
+		float: right;
+		clear: left;
+		width: 20em;
+		padding: 1em 1.5em;
+	}
+}
+
 .process-area-block{
 	margin-bottom: 5em;
 }
 
+.evaluation-question{
+	padding: 0em 1.1em 1em 0em;
+	box-sizing: border-box;
+	display: block;
+}
 
+.question-break{
+	height: 1px;
+	border-bottom: 1px dotted #252525;
+	margin: 1em 0em 1em 0em;
+}
 
 legend.process-area-group{
 	font-size: 1.5em;
@@ -48,6 +76,18 @@ legend.process-area-group{
 .left-content .worksheet-nav-group-title{
 	margin-bottom: .4em;
 	font-size: 1.143em;
+}
+
+#score-summary-table{
+	.thead{
+		th{
+			text-align: center;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			font-size: 18px;
+		}		
+	}
+	
 }
 
 .score-badge{
