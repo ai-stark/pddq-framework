@@ -12,9 +12,9 @@ group: Worksheet
 <div class="pure-u-18-24 center-content has-fixed-menu">
 	<form action="" class="pure-form pure-form-stacked" id="worksheet-form">
 	
-		<div style="overflow: auto; width: 100%;">
-			<a style="float: right; clear: left; margin-left: 1em; width: 20em; padding: 1em 1.5em;" id="sumarize" class="pure-button" href="{{site.baseurl}}/worksheet/score-summary">View Summary</a>
-			<a style="float: right; clear: left; width: 20em; padding: 1em 1.5em;" id="clear" class="pure-button" href="#">Clear All Field Values</a>
+		<div class="worksheet-button-bank">
+			<a id="summarize" class="pure-button" href="{{site.baseurl}}/worksheet/score-summary">View Summary</a>
+			<a id="clear" class="pure-button" href="#">Clear All Field Values</a>
 		</div>
 
 		<fieldset>
@@ -55,7 +55,7 @@ group: Worksheet
 
 		
 								<div class="pure-u-9-24">
-									<span style="padding: 0em 1.1em 1em 0em; box-sizing: border-box; display: block"><span>{{ question.number }}</span> {{ question.content }}</span>
+									<span class="evaluation-question"><span>{{ question.number }}</span> {{ question.content }}</span>
 								</div>
 
 								<div class="pure-u-3-24">
@@ -77,7 +77,7 @@ group: Worksheet
 									<textarea class="pure-u-23-24 worksheet-fields text-fields" name="{{ item.name | slugify }}-notes-{{ question.number | slugify }}" id="{{ item.name | slugify }}-notes-{{ question.number | slugify }}" rows="5" placeholder="This is where you enter any notes that you may have"></textarea>
 								</div>
 
-								<div class="pure-u-1" style="height: 1px; border-bottom: 1px dotted #252525; margin: 1em 0em 1em 0em;"></div>
+								<div class="pure-u-1 question-break"></div>
 
 
 

@@ -14,59 +14,54 @@ left-content-nav-order: 1
 
 	<h4>Purpose</h4>
 
-	<p>Establish the ownership, stewardship, and operational structures needed to ensure that data is managed as a critical asset and implemented in an effective and sustainable manner.</p>
+	<p>Defines an integrated plan to improve and maintain the level of data quality needed to accomplish business goals and objectives.</p>
 
 	<h4>Introductory Notes</h4>
 
-	<p>Governance focuses on implementing processes that facilitate collaborative agreements, decision making, and approvals.  This leads to effectively implementing building, sustaining, and compliance functions for the data assets, as described below:</p>
+	<p>Data quality planning is the process of defining the business goals, objectives, specfic initiatives, and sustained activities to improve data integrity, accuracy, and trustworthiness. The data quality plan, providing an approved organization-wide approach, becomes a unifying force to foster shared responsibility for quality. </p>
+
+	<p>Organizations typically approach data quality improvement project by project, data store by data store.  However, without an overall organization-wide focus on the business criticality of high quality data, positive results are frequently isolated in disconnected pockets.  If processes, methods, and procedures are developed independently for each effort, the organization risks:  lack of awareness on the part of business staff about quality needs across the data lifecycle; undue effort and duplicate costs; and uncoordinated inefficient implementations (for example, repeatedly cleansing data in a downstream data store while not improving data quality at the source).</p>
+
+	<p>The data quality plan has a simple purpose – support focused, strategic thinking.  By engaging in organization-wide collaborative considerations of basic questions, issues and objectives will be surfaced and agreement can be forged. The organization should engage stakeholders from all relevant business areas to pose these questions about patient demographic data: </p>
 
 	<ul>
-		<li><strong>Building</strong> - governance bodies with stakeholder representation need to be actively engaged in making consensus decisions about important aspects of patient demographic data and involved in efforts to improve it, such as contributing terms or definitions to the business glossary (e.g., clarifying use of a term for their business activities), providing metadata (e.g., identifying a data owner for Patient Street Address), approving standards (e.g., Patient Last Name must not exceed 60 characters), and defining quality rules (e.g., Patient Middle Name must not contain an initial).</li>
-		<li><strong>Sustaining</strong> - governance participants need to remain engaged over time, as new processes are added (e.g., a data quality assessment process), as new data requirements are considered, as business terms are added, and as metadata and standards are modified.  In addition, governance needs to exercise control over data management functions, such as reviewing and approving a process for requesting data access, etc.</li>
-		<li><strong>Compliance</strong> - governance should have the authority to determine effective compliance processes, such as thorough reviews, audits, quality assurance, etc., to ensure that: approved standards are being followed; approved processes are implemented; approved metadata is being captured; and that the right stakeholders are involved in decisions that affect them.</li>
+		<li>What are our biggest quality issues in each data store containing patient demographic data?</li>
+		<li>What goals and objectives will we achieve if quality is improved?</li>
+		<li>What are the impacts of poor data quality, e.g., cost, risk, compliance, productivity?</li>
+		<li>How will we monitor and sustain our activies to ensure that we meet our goals?</li>
+		<li>How will we prioritize our efforts? And how will we decide where to direct our time and effort, such as cleaning up duplicates, working with vendors to improve capabilities, and training patient registration staff?</li>
+		<li>What is the proposed sequence to accomplish our objectives?</li>
+		<li>How should the organization engage to review objectives, direct resources, and address business process and technical issues?</li>
+		<li>Who should be involved, who will lead and coordinate improvement efforts, and how will we structure their engagement?</li>
+		<li>How will data quality improvements be measured, analyzed, and reported on over time?</li>
 	</ul>
 
-	<p>Strengthening capabilities with these practices creates a corporate culture of shared engagement and responsibility for patient demographic data that is created and managed.  The business owns the data it creates and manages; therefore, lasting improvements cannot be realized without significant engagement with the business.</p>
-
-	<p>The data governance structure that is selected should correlate with the organizational hierarchy and its primary business processes. Key functions for data governance usually include the following actions:</p>
+	<p>In a large organization, this planning effort may extend over a few weeks.  In a small organization, it may be completed in a few brief meetings.  Once the approach and corresponding specific initiatives are approved (See Data Governance) the data quality plan can be finalized.  It should address:</p>
 
 	<ul>
-		<li>Approve data management plans, policies, processes, and standards;</li>
-		<li>Assign accountability and responsibility for owners, stewards, and custodians (physical data stores);</li>
-		<li>Develop decision rights and change processes;</li>
-		<li>Address regulatory and other external requirements; and</li>
-		<li>Enforce compliance.</li>
+		<li>Quality goals and objectives (e.g, specific objectives such as minimizing duplicates to under 4% in year one, 3% in year two, etc.); </li>
+		<li>Quality principles (e.g., capture and update patient demographic data in an accurate and timely manner);</li>
+		<li>Major issues that the plan commits the organization to address (e.g., commitment to reduce patient safety events due to misidentification by 50% in year one);</li>
+		<li>Anticipated benefits (e.g., what improved outcomes are expected);</li>
+		<li>Responsibilities and accountability – (e.g., what roles are needed to encourage coordination across departments, and how engagement should be evaluated and modified as needed, etc.);</li>
+		<li>Toolsets – (e.g., the scope of the issues justifies selecting and implementing an in-house data quality tool, or the organization may choose to request vendor services, etc.);</li>
+		<li>Sequence plan of initiatives – (e.g., the first initiative will be a data profiling pilot project; the next iniative will be training for all staff; next will be establishing a data quality assessment process with business representatives, etc.);</li>
+		<li>Training – the organization should plan to conduct training for every individual who enters, updates, or modifies data (e.g., during a record merge).</li>
 	</ul>
 
-	<p>Most organizations implement governance at more than one level, both permanent governance bodies and those that are convened for launching new initiatives, for example:</p>
+	<p>Although technologies, methods, and specific techniques can be required, in the end high quality data is the result of continued attention by all relevant stakeholders, communicated and shared across the organization. Creating and following the data quality plan is a positive cultural shift, demonstrating the organization’s executive commitment, and an intention to educate, engage, and sustain effective and direct attention focused on patient demographic data. It is essential to conduct training for everyone who enters, updates, or modifies data (e.g., during a records merge).  Training topics should include: process workflow, current system capabilities, privacy and security/HIPAA, and how feedback should be submitted for suggested improvements.</p>
+
+	<p>The data quality plan establishes and is implemented by the key quality processes.  (<em>See Data Profiling, Data Quality Assessment, and Data Cleansing and Improvement.</em>)  Following the data quality plan will assist the organization to realize these benefits:</p>
 
 	<ul>
-		<li>An executive governance body may be charged with oversight for ensuring that business, technology, and operations are communicating and following defined processes to manage and improve the patient demographic data, determining priorities, approving technology selection decisions, etc.</li>
-		<li>A committee of data stewards, representatives with delegated responsibility for making decisions about shared data as it impacts their business processes, may be created to participate in collective decisions, reviews, and approvals for processes, standards, and compliance mechanisms, etc.</li>
-		<li>Temporary data working groups may be formed from the data steward group and other delegated staff for specific purposes, for example to develop metrics and milestones for data quality improvements.</li>
-		<li>Tactical work groups, permanent or temporary may be created at the behest of permanent governance bodies to achieve specific objectives, such as: to assure the quality of critical data attributes; to analyze business process for modifications that will improve data quality; and to resolve specific business challenges with patient data.</li>
+		<li>Clear, approved path to improved business operations engendering stakeholder involvement and providing confidence that data quality issues will be addressed and prevented in the future;</li>
+		<li>Transformed ad hoc efforts to planned quality progress, saving effort and costs;</li>
+		<li>Organization-wide approach facilitating funding requests for projects and resources;</li>
+		<li>Defined responsibilities parsing out clear roles, from the boardroom to the database administrator;</li>
+		<li>Approved prioritization, consensus, and enhanced awareness among business staff, creating a ‘quality culture’; and</li>
+		<li>Reusability of approaches, methods, toolsets, techniques, and procedures.</li>
 	</ul>
 
-	<p>The data governance function may begin by focusing on a small set of activities and processes, but it typically expands over time to include additional tasks and responsibilities. For example, implementing a Master Patient Index is an effort that would engage numerous business representatives across the patient demographic data lifecycle.</p>
-
-	<p>Key factors for successful implementation of data governance include the following:</p>
-
-	<ul>
-		<li>An approved governance charter(s);</li>
-		<li>Executive oversight, governance policies, goals, and objectives;</li>
-		<li>Clearly defined roles and responsibilities; and</li>
-		<li>Well-designed supporting processes, such as issues escalation.</li>
-	</ul>
-
-	<p>When governance for patient demographic data is implemented successfully and sustained over time, the organization can realize the following benefits:</p>
-
-	<ul>
-		<li>Increased awareness and shared responsibility for data standards and quality on the part of all stakeholders;</li>
-		<li>Increased efficiency of arriving at informed decisions about patient data;</li>
-		<li>Increased assurance that all business needs have been factored into decisions;</li>
-		<li>Strengthened compliance for policies, processes, and standards; and </li>
-		<li>Increased teamwork and likelihood of success for group efforts (e.g., business glossary, data standards, etc.).</li>
-	</ul>
 
 <div class="featherlight-group">
 
